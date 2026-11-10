@@ -2,7 +2,8 @@
 
 <div align="center">
 
-<img src="assets/logo.jpg" alt="HidingJackson Logo" width="190" style="border-radius: 28px; box-shadow: 0 12px 35px rgba(0, 245, 255, 0.35);" />
+<img src="assets/logo.jpg" alt="HidingJackson Cyber Logo" width="180" style="border-radius: 28px; box-shadow: 0 12px 35px rgba(0, 245, 255, 0.35); margin-right: 15px;" />
+<img src="assets/logo_corporate.svg" alt="HidingJackson Corporate Shield" width="180" style="box-shadow: 0 12px 35px rgba(139, 92, 246, 0.35); margin-left: 15px;" />
 
 ### **The Sovereign Stealth Mihomo Client & Next-Gen Streaming Bypass Engine**
 
@@ -19,17 +20,18 @@
 ## ⚡ Zero-Knowledge 30-Second Quickstart (For Everyone)
 
 > **No setup. No subscription fees. No complex terminal commands.**  
-> HidingJackson ships fully tuned out-of-the-box with **624 verified global high-speed nodes**.
+> HidingJackson ships fully tuned out-of-the-box with **624 verified global high-speed nodes** and zero-dependency 1-click launchers.
 
-1. **Launch HidingJackson** from your Desktop shortcut or start menu.
-2. The **`HidingJackson Ultimate Global Suite`** profile is automatically loaded and active.
-3. In the left sidebar:
-   - Toggle **`TUN Mode`** ➔ **`ON`** *(Activates kernel-level leak-proof virtual network card)*.
-   - Toggle **`System Proxy`** ➔ **`ON`** *(Routes all browsers, games, and apps)*.
-4. **Select Your Outbound Node / Group:**
-   - Leave on **`⚡ Auto - Fastest on Earth`** to automatically benchmark and select the lowest latency route.
-   - Or click **`🇺🇸 US Streaming`** to unlock Amazon Prime Video US, Netflix, Hulu, and HBO Max.
-5. **Open Your Browser and Stream.** You are 100% cloaked with zero DNS or WebRTC leaks.
+### Option A: 1-Click Desktop Automation (Recommended)
+1. Double-click **`Start-HidingJackson.bat`** on your Desktop or repository root.
+2. The core Mihomo daemon boots detached, enables Windows System Proxy (`127.0.0.1:7897`), and automatically opens the **HidingJackson Interactive Dashboard** in your browser.
+3. To stop and cleanly restore native direct internet, double-click **`Stop-HidingJackson.bat`**.
+
+### Option B: Graphical Desktop Application
+1. Launch **`HidingJackson`** (`clash-verge.exe`).
+2. The **`HidingJackson Ultimate Global Suite`** profile is automatically active.
+3. Ensure **`System Proxy`** is toggled **`ON`**.
+4. Choose **`⚡ Auto - Lowest Latency`** or **`🇺🇸 US Streaming`** to unlock Amazon Prime Video US, Netflix, Hulu, and HBO Max.
 
 ---
 
@@ -41,34 +43,44 @@ Engineered for users who demand zero DNS leaks, undetectable packet obfuscation,
 
 ---
 
+## 🛠️ Root-Cause Engineering: Resolution of "Internally Not Responsive"
+
+During comprehensive end-to-end system diagnostics, multiple silent architectural failures were intercepted and surgically cured:
+
+| Issue | Root Cause | Impact | HidingJackson Sovereign Fix |
+|---|---|---|---|
+| **Mihomo Syntax Parser Crash** | Commas `,` inside proxy group names like `🇺🇸 US Streaming (Prime, Netflix, Hulu)` | Mihomo uses `,` as delimiter in rule definitions (`TYPE,TARGET,GROUP`), causing it to parse `(Prime` as target group and crash on startup with Exit Code 1. | Fully sanitized all group names and rule maps (`🇺🇸 US Streaming`, `🇬🇧 UK Streaming`, `🇯🇵 Japan Anime`). Passed validation with 0 errors. |
+| **DNS Blackhole & Timeout Latency** | Missing `default-nameserver` bootstrap and legacy mainland Chinese DoH providers (`doh.pub`, `alidns.com`) | Requests hung or were throttled by Indian ISPs (Reliance Jio / Airtel). Unable to resolve DoH hostnames without bootstrap DNS. | Injected explicit IP bootstrap resolvers (`1.1.1.1`, `8.8.8.8`, `9.9.9.9`) and configured Cloudflare & Google ultra-low-latency DoH. |
+| **Zombie System Proxy State** | `ProxyEnable: 1` persisted in Windows Registry when engine daemon crashed or was closed | All browsers and Windows applications failed with `ERR_CONNECTION_REFUSED` because nothing listened on `7897`. | Authored two-phase automated lifecycle scripts (`Start-HidingJackson.bat`, `Stop-HidingJackson.bat`) that dynamically enforce proxy health and guarantee clean direct fallback. |
+| **Windows Tray Crash (`0x80004005`)** | `sysproxy_tray_icon: true` called dynamic icon mutation every 30 seconds on Windows Shell | Windows `Shell_NotifyIconW` returned `E_FAIL` (`-2147467259`), freezing the Tauri main event loop. | Decoupled tray icon mutation in `verge.yaml`, preserving stable single common tray icon. |
+| **Secret Auth Mismatch** | Default `secret: set-your-secret` in `config.yaml` vs empty secret in profile | Web dashboards and REST controller rejected client connections with `401 Unauthorized`. | Aligned controller authorization to zero-friction empty secret for instant localhost controller access. |
+| **IPv6 Leak Suppression** | Active IPv6 interface causing dual-stack leak | Certain streaming providers detect ISP location via secondary IPv6 route. | Enforced `ipv6: false` across all profile matrices, guaranteeing 100% IPv4 stealth tunneling. |
+
+---
+
 ## ✨ Flagship Capabilities
 
-### ⚡ 1. Auto - Fastest on Earth Routing
+### ⚡ 1. Auto - Lowest Latency Steering
 - Dynamically tests latency across **600+ verified global nodes** (VLESS, Trojan, Hysteria 2, Shadowsocks).
 - Real-time `url-test` health checking with 50ms tolerance: if any server degrades, traffic is steered instantaneously to the next fastest node without dropping active sockets.
 
-### 🛡️ 2. Leak-Proof Kernel WinTUN Mode
-- Routes 100% of operating system traffic through a virtual network adapter.
-- Employs strict route isolation, auto-redirect, and endpoint-independent NAT.
-- Bypasses traditional HTTP proxy limitations and intercepts UDP games, Discord, and terminal traffic.
-
-### 🔒 3. Fake-IP DNS & Encrypted DoH Matrix
+### 🛡️ 2. Leak-Proof System Proxy & Fake-IP Matrix
 - Upstream domains are assigned private virtual IPs (`198.18.0.0/16`), rendering ISP DNS poisoning and eavesdropping impossible.
 - Quad-redundant DoH (DNS over HTTPS) resolution via Cloudflare (`1.1.1.1`), Google (`8.8.8.8`), and Quad9 (`9.9.9.9`).
 - Complete WebRTC leak immunity and IPv6 leak suppression.
 
-### 🎬 4. Multi-Region Media & Streaming Steering
+### 🎬 3. Multi-Region Media & Streaming Steering
 - **🇺🇸 US Streaming**: Dedicated routing policies for Amazon Prime Video, Netflix US, Hulu, Max, Peacock, Tubi, and Pluto TV.
 - **🇬🇧 UK Streaming**: BBC iPlayer, ITVX, Channel 4, and UK transit channels.
 - **🇯🇵 Japan Anime & Media**: Abema TV, TVer, and Tokyo edge nodes.
 - **🎮 Gaming & Low Ping**: Dedicated routing for Discord, Steam, Epic Games, and online gaming.
 - **🤖 AI Acceleration**: ChatGPT, Claude, Gemini, Copilot, and Perplexity routed through optimal high-bandwidth routes.
 
-### 🇮🇳 5. Domestic Speed Preservation (Zero Ping Penalty)
+### 🇮🇳 4. Domestic Speed Preservation (Zero Ping Penalty)
 - All Indian domestic banking (SBI, HDFC, ICICI, Axis), IRCTC, Jio, Airtel, and `.in` domains bypass the proxy entirely.
 - Enjoy 100% native fiber speed, zero authentication blocks, and flawless UPI transactions.
 
-### 🛑 6. Ad-Block & Telemetry Shield
+### 🛑 5. Ad-Block & Telemetry Shield
 - Built-in domain and keyword rejection matrix.
 - Drops Google DoubleClick, Amazon telemetry, tracking beacons, and invasive advertising without crashing protected DRM video players.
 
@@ -80,15 +92,15 @@ Engineered for users who demand zero DNS leaks, undetectable packet obfuscation,
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         HIDINGJACKSON ARCHITECTURE                          │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│  [ FRONTEND ]   React 19 · Vite · TypeScript · Tailwind · Lucide UI         │
+│  [ FRONTEND ]   Interactive HTML5 Dashboard · WebSockets · React 19 UI      │
 │         ▲                                                                   │
-│         │ (Tauri IPC Bridge / WebSocket RPC)                                │
+│         │ (RESTful Controller :9097 / WebSocket Real-Time Traffic)          │
 │         ▼                                                                   │
-│  [ BACKEND ]    Tauri v2 (Rust) · System Tray · Service Daemon IPC          │
+│  [ BACKEND ]    Tauri v2 (Rust) / Standalone Headless Daemon Controller     │
 │         ▲                                                                   │
-│         │ (Process Orchestration & Virtual TUN Device)                      │
+│         │ (Mixed Proxy :7897 & Windows System Proxy Engine)                 │
 │         ▼                                                                   │
-│  [ CORE ]       Mihomo Meta Engine · WinTUN / gVisor Stack · Fake-IP DNS    │
+│  [ CORE ]       Mihomo Meta Engine · Fake-IP DNS · DoH Bootstrap Matrix     │
 │         ▲                                                                   │
 │         │ (Encrypted Multiplexed Outbounds)                                 │
 │         ▼                                                                   │
@@ -98,108 +110,21 @@ Engineered for users who demand zero DNS leaks, undetectable packet obfuscation,
 
 ---
 
-## 🚀 Getting Started
+## 🖥️ Interactive HTML5 Web Dashboard
 
-### Method 1: Ready-to-Run (Pre-Configured)
-1. Launch **HidingJackson** from your desktop or start menu shortcut:
-   ```powershell
-   Start-Process "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\HidingJackson.lnk"
-   ```
-2. The application opens with the **HidingJackson Ultimate Global Suite** profile already loaded and selected.
-3. Toggle **TUN Mode** and **System Proxy** to `ON` in the sidebar.
-4. Enjoy unrestricted, encrypted, ultra-fast streaming!
-
----
-
-### Method 2: Building From Source
-
-#### Prerequisites
-- **Node.js** (v20+ recommended)
-- **pnpm** (v9+)
-- **Rust Toolchain** (`rustc` and `cargo` latest stable)
-- **Windows C++ Build Tools** (Visual Studio 2022)
-
-#### Compilation Steps
-```bash
-# 1. Clone the repository
-git clone https://github.com/SVR1339/HidingJackson.git
-cd HidingJackson
-
-# 2. Install dependencies
-pnpm install
-
-# 3. Run development server
-pnpm dev
-
-# 4. Build production desktop installer
-pnpm build
-```
-
-Compiled packages (`.exe`, `.msi`, portable `.zip`) will be generated inside:
-```
-src-tauri/target/release/bundle/
-```
+Access the bundled, zero-dependency dashboard in any browser:
+- **Location:** `web/index.html` (or via `Start-HidingJackson.bat`)
+- **Features:**
+  - Real-time connection badge (ONLINE / OFFLINE).
+  - Live upload and download bandwidth meters.
+  - 1-click group switching (`🛡️ HidingJackson Core`, `🇺🇸 US Streaming`, `⚡ Auto - Lowest Latency`, `🇬🇧 UK Streaming`, `🇯🇵 Japan Anime`).
+  - Single-click latency benchmark across hundreds of live nodes.
+  - Instant outbound node selection.
 
 ---
 
-## ⚙️ Advanced Configuration Specification
+## 📜 License & Acknowledgments
 
-The core routing rules and proxy parameters are managed through `hidingjackson-global.yaml`.
-
-```yaml
-mixed-port: 7897
-allow-lan: false
-mode: rule
-log-level: info
-ipv6: false
-unified-delay: true
-tcp-concurrent: true
-
-tun:
-  enable: true
-  stack: mixed
-  dns-hijack:
-    - 'tcp://any:53'
-    - 'udp://any:53'
-  auto-route: true
-  auto-redirect: true
-  strict-route: true
-
-dns:
-  enable: true
-  ipv6: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  nameserver:
-    - 'https://1.1.1.1/dns-query'
-    - 'https://dns.google/dns-query'
-  fallback:
-    - 'https://9.9.9.9/dns-query'
-```
-
----
-
-## 🛠️ Automated CI/CD Workflows
-
-HidingJackson includes automated **GitHub Actions** workflows located in `.github/workflows/`:
-- **autobuild.yml**: Compiles and tests cross-platform release artifacts on every push to `main`.
-- **release.yml**: Automatically produces multi-platform signed installers (`.exe`, `.msi`, `.dmg`, `.AppImage`) upon creating a GitHub tag/release.
-
-To trigger an automated release build on your GitHub repository:
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-
----
-
-## 📜 License
-
-Licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
-See the [LICENSE](LICENSE) file for complete terms.
-
----
-
-<div align="center">
-<b>Created and Maintained with Sovereign Agency by <a href="https://github.com/SVR1339">SVR1339</a></b>
-</div>
+- **Author & Maintainer:** BANDA SAI VARDHAN REDDY ([@SVR1339](https://github.com/SVR1339))
+- **Core Engine:** [Mihomo (Clash.Meta)](https://github.com/MetaCubeX/mihomo)
+- **License:** GNU General Public License v3.0 (GPL-3.0)

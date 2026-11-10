@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HidingJackson Ultimate Stealth Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/logo_corporate.svg">
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: #0d1527;
+      --card-border: #1a2a4a;
+      --primary: #00e5ff;
+      --accent: #8b5cf6;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(180deg, #0f1c38 0%, #070b14 100%);
+      border-bottom: 1px solid var(--card-border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand svg {
+      width: 44px;
+      height: 44px;
+      filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));
+    }
+    .brand h1 {
+      font-size: 22px;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #00e5ff, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    .brand p {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--success);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .status-badge.offline {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: rgba(239, 68, 68, 0.3);
+      color: var(--danger);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 8px currentColor;
+    }
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .metric-title {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .metric-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .tabs-container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+    }
+    .tab-btn.active {
+      background: rgba(0, 229, 255, 0.12);
+      border-color: rgba(0, 229, 255, 0.4);
+      color: var(--primary);
+    }
+    .actions-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background: linear-gradient(135deg, #0284c7, #7c3aed);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-secondary {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+    }
+    .node-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+    .node-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .node-card:hover {
+      border-color: rgba(0, 229, 255, 0.4);
+      transform: translateY(-1px);
+    }
+    .node-card.selected {
+      border-color: var(--primary);
+      background: rgba(0, 229, 255, 0.08);
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+    }
+    .node-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow: hidden;
+    }
+    .node-name {
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+    .node-type {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .delay-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+    }
+    .delay-pill.fast { color: var(--success); background: rgba(16, 185, 129, 0.1); }
+    .delay-pill.medium { color: var(--warning); background: rgba(245, 158, 11, 0.1); }
+    .delay-pill.slow { color: var(--danger); background: rgba(239, 68, 68, 0.1); }
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" stroke="#00e5ff" stroke-width="4" fill="rgba(0, 229, 255, 0.06)"/>
+        <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#8b5cf6" stroke-width="2.5" fill="none"/>
+        <polygon points="50,28 50,44 64,52 64,68 50,76 36,68 36,52" fill="#00e5ff"/>
+        <circle cx="50" cy="50" r="5" fill="#ffffff"/>
+      </svg>
+      <div>
+        <h1>HidingJackson</h1>
+        <p>Autonomous Stealth Egress & Unblock Engine</p>
+      </div>
+    </div>
+    <div id="statusBadge" class="status-badge">
+      <span class="status-dot"></span>
+      <span id="statusText">CONNECTING...</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Mixed Proxy Port</div>
+        <div class="metric-value">127.0.0.1:7897</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Controller Core API</div>
+        <div class="metric-value" id="coreVersion">Mihomo v1.19.33</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Download / Upload</div>
+        <div class="metric-value" id="trafficSpeed">0.0 KB/s</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Active Outbound Egress</div>
+        <div class="metric-value" id="activeNode">DIRECT</div>
+      </div>
+    </div>
+
+    <div class="actions-bar">
+      <div class="tabs-container" id="groupTabs">
+        <!-- Injected via JS -->
+      </div>
+      <button class="btn" id="pingBtn" onclick="testGroupDelay()">⚡ Test Latencies</button>
+    </div>
+
+    <div class="node-grid" id="nodeGrid">
+      <div style="color: var(--text-muted); font-size: 14px; padding: 20px;">Loading nodes from HidingJackson Core...</div>
+    </div>
+  </main>
+
+  <footer>
+    HidingJackson &bull; Developed by BANDA SAI VARDHAN REDDY (<a href="https://github.com/SVR1339/HidingJackson" target="_blank" style="color: var(--primary); text-decoration: none;">SVR1339</a>) &bull; Zero Leakage Fake-IP Engine
+  </footer>
+
+  <script>
+    const API_URL = 'http://127.0.0.1:9097';
+    let currentGroup = '🛡️ HidingJackson Core';
+    let proxiesData = {};
+    let delays = {};
+
+    async function init() {
+      try {
+        const verRes = await fetch(`${API_URL}/version`);
+        if (verRes.ok) {
+          const ver = await verRes.json();
+          document.getElementById('coreVersion').innerText = `v${ver.version || '1.19'}`;
+          document.getElementById('statusBadge').className = 'status-badge';
+          document.getElementById('statusText').innerText = 'CORE ONLINE';
+        }
+      } catch (e) {
+        document.getElementById('statusBadge').className = 'status-badge offline';
+        document.getElementById('statusText').innerText = 'CORE OFFLINE';
+      }
+      await refreshProxies();
+      startTrafficMonitor();
+    }
+
+    async function refreshProxies() {
+      try {
+        const res = await fetch(`${API_URL}/proxies`);
+        if (!res.ok) return;
+        const data = await res.json();
+        proxiesData = data.proxies || {};
+        renderTabs();
+        renderNodes();
+      } catch (e) {
+        console.error('Failed to fetch proxies:', e);
+      }
+    }
+
+    function renderTabs() {
+      const container = document.getElementById('groupTabs');
+      const targetGroups = ['🛡️ HidingJackson Core', '🇺🇸 US Streaming', '⚡ Auto - Lowest Latency', '🇬🇧 UK Streaming', '🇯🇵 Japan Anime', '🛑 Ad-Block and Telemetry Drop'];
+      
+      const available = targetGroups.filter(g => proxiesData[g]);
+      if (!available.includes(currentGroup) && available.length > 0) {
+        currentGroup = available[0];
+      }
+
+      container.innerHTML = available.map(g => `
+        <button class="tab-btn ${g === currentGroup ? 'active' : ''}" onclick="selectGroup('${g}')">
+          ${g}
+        </button>
+      `).join('');
+
+      if (proxiesData[currentGroup]) {
+        document.getElementById('activeNode').innerText = proxiesData[currentGroup].now || 'DIRECT';
+      }
+    }
+
+    function selectGroup(group) {
+      currentGroup = group;
+      renderTabs();
+      renderNodes();
+    }
+
+    function renderNodes() {
+      const grid = document.getElementById('nodeGrid');
+      const groupObj = proxiesData[currentGroup];
+      if (!groupObj || !groupObj.all) {
+        grid.innerHTML = '<div style="padding: 20px; color: var(--text-muted)">No nodes found in this group.</div>';
+        return;
+      }
+
+      const selectedNode = groupObj.now;
+      grid.innerHTML = groupObj.all.map(nodeName => {
+        const isSel = nodeName === selectedNode;
+        const nodeObj = proxiesData[nodeName] || {};
+        const delay = delays[nodeName] || (nodeObj.history && nodeObj.history.length > 0 ? nodeObj.history[nodeObj.history.length - 1].delay : 0);
+        
+        let delayBadge = '<span class="delay-pill">-</span>';
+        if (delay > 0) {
+          const cls = delay < 200 ? 'fast' : (delay < 450 ? 'medium' : 'slow');
+          delayBadge = `<span class="delay-pill ${cls}">${delay}ms</span>`;
+        }
+
+        return `
+          <div class="node-card ${isSel ? 'selected' : ''}" onclick="switchNode('${encodeURIComponent(currentGroup)}', '${encodeURIComponent(nodeName)}')">
+            <div class="node-info">
+              <span class="node-name" title="${nodeName}">${nodeName}</span>
+              <span class="node-type">${nodeObj.type || 'Proxy'}</span>
+            </div>
+            ${delayBadge}
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function switchNode(encodedGroup, encodedNode) {
+      try {
+        const group = decodeURIComponent(encodedGroup);
+        const node = decodeURIComponent(encodedNode);
+        const res = await fetch(`${API_URL}/proxies/${encodeURIComponent(group)}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: node })
+        });
+        if (res.status === 204 || res.ok) {
+          if (proxiesData[group]) proxiesData[group].now = node;
+          if (group === currentGroup) {
+            document.getElementById('activeNode').innerText = node;
+          }
+          renderNodes();
+        }
+      } catch (e) {
+        alert('Switch failed: ' + e);
+      }
+    }
+
+    async function testGroupDelay() {
+      const btn = document.getElementById('pingBtn');
+      btn.innerText = 'Testing...';
+      btn.disabled = true;
+      try {
+        const url = `${API_URL}/group/${encodeURIComponent(currentGroup)}/delay?url=http://www.gstatic.com/generate_204&timeout=3500`;
+        const res = await fetch(url);
+        if (res.ok) {
+          const results = await res.json();
+          delays = { ...delays, ...results };
+          renderNodes();
+        }
+      } catch (e) {
+        console.error('Delay test error:', e);
+      } finally {
+        btn.innerText = '⚡ Test Latencies';
+        btn.disabled = false;
+      }
+    }
+
+    function startTrafficMonitor() {
+      try {
+        const ws = new WebSocket(`ws://127.0.0.1:9097/traffic`);
+        ws.onmessage = (event) => {
+          const data = JSON.parse(event.data);
+          const up = (data.up / 1024).toFixed(1);
+          const down = (data.down / 1024).toFixed(1);
+          document.getElementById('trafficSpeed').innerText = `↓ ${down} KB/s  ↑ ${up} KB/s`;
+        };
+      } catch (e) {}
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
