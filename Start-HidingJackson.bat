@@ -1,7 +1,7 @@
 @echo off
 title HidingJackson - Launching Stealth Proxy Engine
 echo ==============================================================================
-echo                 HIDINGJACKSON - STEALTH EGRESS & UNBLOCK ENGINE
+echo                 HIDINGJACKSON - STEALTH EGRESS AND UNBLOCK ENGINE
 echo ==============================================================================
 echo [1/3] Checking Core Engine Status...
 
@@ -28,5 +28,5 @@ echo           - Proxy Port: 127.0.0.1:7897
 echo           - Controller API: http://127.0.0.1:9097
 echo           - Web Dashboard: Opened in your browser
 echo ==============================================================================
-timeout /t 3
+timeout /t 2 >nul
 exit
