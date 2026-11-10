@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Studio Canvas -->
+    <radialGradient id="hex-bg" cx="50%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </radialGradient>
+
+    <!-- Facet 1: Electric Cyan Glow -->
+    <linearGradient id="facet-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Facet 2: Deep Sapphire Core -->
+    <linearGradient id="facet-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- Facet 3: Obsidian Shadow Plate -->
+    <linearGradient id="facet-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Facet 4: Neon Violet Egress -->
+    <linearGradient id="facet-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="corp-bloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Modern App Squircle Tile -->
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="url(#hex-bg)" stroke="#1e293b" stroke-width="3"/>
+  <rect x="28" y="28" width="456" height="456" rx="100" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.2"/>
+
+  <!-- ======================================================== -->
+  <!-- GEOMETRIC CORPORATE STEALTH SHIELD LOGOMARK              -->
+  <!-- ======================================================== -->
+  <g filter="url(#corp-bloom)">
+    
+    <!-- Outer Shield Halo / Boundary -->
+    <!-- Top-Left Plate -->
+    <polygon points="256,90 144,154 184,270 256,230" fill="url(#facet-cyan)" opacity="0.95"/>
+    
+    <!-- Top-Right Plate -->
+    <polygon points="256,90 368,154 328,270 256,230" fill="url(#facet-blue)" opacity="0.95"/>
+    
+    <!-- Bottom-Left Sweep (H Pillar) -->
+    <polygon points="184,270 256,380 256,310 216,250" fill="url(#facet-dark)" opacity="0.9"/>
+
+    <!-- Bottom-Right Sweep (J Hook Curve) -->
+    <path d="M 328 270 
+             L 256 380 
+             C 288 380, 314 360, 324 330 
+             L 340 290 
+             Z" 
+          fill="url(#facet-violet)" 
+          opacity="0.95"/>
+
+    <!-- Central Stealth Delta / Negative Space Diamond -->
+    <!-- Represents the stealth cloaked core -->
+    <polygon points="256,150 296,230 256,210 216,230" fill="#ffffff" opacity="0.95"/>
+    <polygon points="256,210 296,230 256,310 216,230" fill="#030712" opacity="0.75"/>
+  </g>
+
+  <!-- High-Precision Metric Radar Accent -->
+  <circle cx="256" cy="235" r="160" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="3 6" opacity="0.3"/>
+
+  <!-- ======================================================== -->
+  <!-- ENTERPRISE TYPOGRAPHY                                    -->
+  <!-- ======================================================== -->
+  <text x="256" y="430" 
+        text-anchor="middle" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" 
+        font-size="25" 
+        font-weight="800" 
+        letter-spacing="8" 
+        fill="#f8fafc">
+    HIDING<tspan fill="#38bdf8">JACKSON</tspan>
+  </text>
+  
+  <text x="256" y="452" 
+        text-anchor="middle" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" 
+        font-size="10" 
+        font-weight="600" 
+        letter-spacing="5" 
+        fill="#64748b">
+    SECURE NETWORK ARCHITECTURE
+  </text>
+</svg>
