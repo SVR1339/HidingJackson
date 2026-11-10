@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![HidingJackson Banner](https://raw.githubusercontent.com/SVR1339/HidingJackson/main/src-tauri/icons/128x128%402x.png)
+<img src="assets/logo.jpg" alt="HidingJackson Logo" width="190" style="border-radius: 28px; box-shadow: 0 12px 35px rgba(0, 245, 255, 0.35);" />
 
 ### **The Sovereign Stealth Mihomo Client & Next-Gen Streaming Bypass Engine**
 
@@ -13,6 +13,23 @@
 [![Tauri v2](https://img.shields.io/badge/Framework-Tauri%20v2%20%2B%20React%2019-cyan?style=for-the-badge)](https://tauri.app/)
 
 </div>
+
+---
+
+## ⚡ Zero-Knowledge 30-Second Quickstart (For Everyone)
+
+> **No setup. No subscription fees. No complex terminal commands.**  
+> HidingJackson ships fully tuned out-of-the-box with **624 verified global high-speed nodes**.
+
+1. **Launch HidingJackson** from your Desktop shortcut or start menu.
+2. The **`HidingJackson Ultimate Global Suite`** profile is automatically loaded and active.
+3. In the left sidebar:
+   - Toggle **`TUN Mode`** ➔ **`ON`** *(Activates kernel-level leak-proof virtual network card)*.
+   - Toggle **`System Proxy`** ➔ **`ON`** *(Routes all browsers, games, and apps)*.
+4. **Select Your Outbound Node / Group:**
+   - Leave on **`⚡ Auto - Fastest on Earth`** to automatically benchmark and select the lowest latency route.
+   - Or click **`🇺🇸 US Streaming`** to unlock Amazon Prime Video US, Netflix, Hulu, and HBO Max.
+5. **Open Your Browser and Stream.** You are 100% cloaked with zero DNS or WebRTC leaks.
 
 ---
 
