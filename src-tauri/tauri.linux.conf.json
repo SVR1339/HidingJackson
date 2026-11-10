@@ -1,0 +1,35 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "identifier": "io.github.hidingjackson.hidingjackson",
+  "bundle": {
+    "targets": ["deb", "rpm"],
+    "linux": {
+      "deb": {
+        "depends": ["openssl", "libayatana-appindicator3-1"],
+        "desktopTemplate": "./packages/linux/hidingjackson.desktop",
+        "provides": ["hidingjackson"],
+        "conflicts": ["hidingjackson"],
+        "replaces": ["hidingjackson"],
+        "postInstallScript": "./packages/linux/post-install.sh",
+        "preRemoveScript": "./packages/linux/pre-remove.sh"
+      },
+      "rpm": {
+        "depends": ["openssl", "libayatana-appindicator-gtk3"],
+        "recommends": ["policycoreutils", "policycoreutils-python-utils"],
+        "desktopTemplate": "./packages/linux/hidingjackson.desktop",
+        "provides": ["hidingjackson"],
+        "conflicts": ["hidingjackson"],
+        "obsoletes": ["hidingjackson"],
+        "postInstallScript": "./packages/linux/post-install-rpm.sh",
+        "preRemoveScript": "./packages/linux/pre-remove.sh"
+      }
+    },
+    "externalBin": [
+      "./sidecar/hidingjackson-service",
+      "./sidecar/hidingjackson-service-install",
+      "./sidecar/hidingjackson-service-uninstall",
+      "./sidecar/verge-mihomo",
+      "./sidecar/verge-mihomo-alpha"
+    ]
+  }
+}
