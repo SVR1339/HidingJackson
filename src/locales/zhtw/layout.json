@@ -22,27 +22,27 @@
     },
     "serviceMigration": {
       "locationRefusedMessage": "系統服務的安裝路徑或目錄權限未通過安全檢查，無法啟動核心。請重新安裝服務以還原服務檔案和權限，然後重試。Windows 可能會要求管理員授權。",
-      "notAutoStartedMessage": "HidingJackson 系統服務的啟動類型已被改為手動或停用（常見於最佳化軟體的開機加速功能），開機後不會自動執行，本次已改用 Sidecar。請重新安裝服務以恢復自動啟動。Windows 可能會要求管理員授權。",
+      "notAutoStartedMessage": "HidingJackson 系統服務的啟動類型已被改為手動或停用（常見於最佳化軟體的開機加速功能），開機後不會自動執行，本次已改用用户模式。請重新安裝服務以恢復自動啟動。Windows 可能會要求管理員授權。",
       "title": "需要更新系統服務",
-      "message": "HidingJackson 系統服務版本與目前應用程式要求不符。請選擇「重新安裝服務」移除現有服務並安裝所需版本，也可以僅在本次工作階段繼續使用 Sidecar。",
+      "message": "HidingJackson 系統服務版本與目前應用程式要求不符。請選擇「重新安裝服務」移除現有服務並安裝所需版本，也可以僅在本次工作階段繼續使用使用者模式。",
       "checkingMessage": "正在確認系統服務狀態及目前執行模式，請稍候……",
-      "unavailableMessage": "所需的 HidingJackson 系統服務目前不可用。你可以安裝或修復服務，或僅在本次工作階段繼續使用 Sidecar。",
+      "unavailableMessage": "所需的 HidingJackson 系統服務目前不可用。你可以安裝或修復服務，或僅在本次工作階段繼續使用使用者模式。",
       "reinstall": "重新安裝服務",
       "repair": "修復服務",
-      "continueSidecar": "繼續使用 Sidecar",
+      "continueSidecar": "繼續使用使用者模式",
       "success": "HidingJackson 系統服務已更新",
       "errors": {
         "actionFailed": "服務操作失敗",
         "stateRefreshFailed": "重新整理服務狀態失敗",
         "restartFailed": "重啟內核失敗",
         "revalidationFailed": "重新整理執行狀態失敗",
-        "sidecarFailed": "繼續使用 Sidecar 失敗"
+        "sidecarFailed": "繼續使用使用者模式失敗"
       }
     },
     "sysproxyPrivilege": {
       "title": "無法設定系統代理",
       "message": "macOS 以權限不足為由拒絕了這次修改。安裝 HidingJackson 系統服務後，代理設定將由服務以管理員身分完成，之後不會再出現這個提示。",
-      "serviceReadyMessage": "HidingJackson 系統服務已就緒，但核心仍以 Sidecar 執行，因此設定系統代理時被拒絕。切換到服務模式即可解決，無需重新安裝。",
+      "serviceReadyMessage": "HidingJackson 系統服務已就緒，但核心仍以使用者模式執行，因此設定系統代理時被拒絕。切換到服務模式即可解決，無需重新安裝。",
       "alternative": "另一種辦法：在系統設定 → 隱私權與安全性 → 進階中，關閉「存取系統範圍設定需要管理員密碼」。",
       "later": "稍後再說",
       "installing": "正在安裝系統服務，可能會要求管理員密碼，請稍候……",

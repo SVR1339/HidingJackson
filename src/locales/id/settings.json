@@ -668,14 +668,14 @@
         "uninstallFailed": "Gagal mencopot layanan",
         "reinstallFailed": "Gagal memasang ulang layanan",
         "repairFailed": "Gagal memperbaiki layanan",
-        "sidecarFailed": "Gagal melanjutkan dengan Sidecar",
+        "sidecarFailed": "Gagal melanjutkan dalam Mode Pengguna",
         "coreAlreadyRunning": "Tidak dapat memulai inti: proses inti sudah berjalan. Tutup aplikasi terkait atau hentikan proses yang tersisa, lalu coba lagi. Jika masalah berlanjut, mulai ulang komputer."
       },
       "sysproxy": {
         "privilegeRequired": "Tidak dapat mengatur proxy sistem: macOS menolak perubahan ini karena hak akses tidak mencukupi. Pasang layanan HidingJackson; jika Anda administrator, Anda juga dapat mematikan keharusan kata sandi administrator untuk pengaturan seluruh sistem di opsi lanjutan Pengaturan Sistem → Privasi & Keamanan.",
         "directFallback": "Gagal mengatur proxy sistem; lalu lintas dikembalikan ke koneksi langsung.",
         "guardStopped": "Penjaga proxy sistem berhenti setelah gagal beberapa kali berturut-turut. Proxy sistem tidak lagi dipertahankan secara otomatis.",
-        "sidecarWhileServiceReady": "Proxy sistem tidak dapat diatur: layanan HidingJackson sudah siap, tetapi inti masih berjalan sebagai Sidecar. Mulai ulang inti untuk beralih ke mode layanan.",
+        "sidecarWhileServiceReady": "Proxy sistem tidak dapat diatur: layanan HidingJackson sudah siap, tetapi inti masih berjalan dalam Mode Pengguna. Mulai ulang inti untuk beralih ke mode layanan.",
         "coreNotReady": "Proxy sistem tidak dapat diaktifkan karena inti tidak berjalan. Jalankan inti (atau pasang/perbaiki layanan HidingJackson) lalu coba lagi.",
         "systemCallFailed": "Proxy sistem gagal ditulis karena panggilan sistem Windows gagal. Ini biasanya sementara, coba lagi."
       }
@@ -692,11 +692,11 @@
       "clashService": {
         "appDataNotOwned": "Layanan menolak memulai inti karena, di disk, folder data aplikasi tidak dimiliki oleh akun Anda (sering terjadi jika folder beranda berada di drive eksternal). Memperbaiki layanan tidak akan mengatasinya. Jalankan perintah ini di terminal, lalu mulai ulang aplikasi:",
         "installSuccess": "Layanan Berhasil Diinstal",
-        "permissionFallback": "{{reason}} Beralih ke mode Sidecar; TUN memerlukan hak administrator. Ikuti panduan untuk memperbaiki dan menginstal ulang layanan, atau jalankan aplikasi sebagai administrator tanpa menginstal layanan.",
+        "permissionFallback": "{{reason}} Beralih ke Mode Pengguna; TUN memerlukan hak administrator. Ikuti panduan untuk memperbaiki dan menginstal ulang layanan, atau jalankan aplikasi sebagai administrator tanpa menginstal layanan.",
         "permissionWritableReason": "Akun biasa dapat mengubah berkas inti atau folder induknya, sehingga layanan menolak menjalankan inti dengan hak istimewa.",
         "permissionRejectedReason": "Layanan tidak dapat memastikan bahwa berkas dan folder inti aman dijalankan dengan hak istimewa.",
         "permissionRepairGuide": "Lihat panduan perbaikan",
-        "sidecarFallback": "Layanan tidak dapat memulai inti. Beralih ke mode Sidecar; layanan masih tidak tersedia.",
+        "sidecarFallback": "Layanan tidak dapat memulai inti. Beralih ke Mode Pengguna; layanan masih tidak tersedia.",
         "uninstallSuccess": "Layanan Berhasil Dicopot"
       },
       "updater": {

@@ -45,7 +45,7 @@ export const createStoreReads = (
         }
       })
       .catch((error) => {
-        console.warn('[app-store] Sidecar failure could not be read:', error)
+        console.warn('[app-store] User mode fallback could not be read:', error)
       })
     getPendingFailures()
       .then((failures) => {

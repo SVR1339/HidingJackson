@@ -668,14 +668,14 @@
         "uninstallFailed": "서비스를 제거하지 못했습니다",
         "reinstallFailed": "서비스를 다시 설치하지 못했습니다",
         "repairFailed": "서비스를 복구하지 못했습니다",
-        "sidecarFailed": "Sidecar로 계속하지 못했습니다",
+        "sidecarFailed": "사용자 모드로 계속하지 못했습니다",
         "coreAlreadyRunning": "코어를 시작할 수 없습니다. 이미 실행 중인 코어 프로세스가 있습니다. 관련 앱이나 남아 있는 프로세스를 종료한 뒤 다시 시도하세요. 문제가 계속되면 컴퓨터를 다시 시작하세요."
       },
       "sysproxy": {
         "privilegeRequired": "시스템 프록시를 설정할 수 없습니다: 권한이 부족하여 macOS가 변경을 거부했습니다. HidingJackson 서비스를 설치하십시오. 관리자라면 시스템 설정 → 개인 정보 보호 및 보안의 고급 옵션에서, 시스템 전체 설정에 관리자 암호를 요구하는 설정을 끌 수도 있습니다.",
         "directFallback": "시스템 프록시 설정에 실패하여 직접 연결로 되돌렸습니다.",
         "guardStopped": "시스템 프록시 가드가 연속으로 실패하여 중지되었습니다. 시스템 프록시가 더 이상 자동으로 유지되지 않습니다.",
-        "sidecarWhileServiceReady": "시스템 프록시를 설정하지 못했습니다: HidingJackson 서비스는 준비되었지만 코어가 아직 Sidecar로 실행 중입니다. 코어를 재시작하면 서비스 모드로 전환됩니다.",
+        "sidecarWhileServiceReady": "시스템 프록시를 설정하지 못했습니다: HidingJackson 서비스는 준비되었지만 코어가 아직 사용자 모드로 실행 중입니다. 코어를 재시작하면 서비스 모드로 전환됩니다.",
         "coreNotReady": "코어가 실행 중이 아니어서 시스템 프록시를 켤 수 없습니다. 코어를 시작한 뒤(또는 HidingJackson 서비스를 설치/복구한 뒤) 다시 시도하세요.",
         "systemCallFailed": "Windows 시스템 호출이 실패하여 시스템 프록시를 기록하지 못했습니다. 대개 일시적인 문제이니 다시 시도하세요."
       }
@@ -692,11 +692,11 @@
       "clashService": {
         "appDataNotOwned": "서비스가 코어 시작을 거부했습니다. 디스크상의 앱 데이터 폴더 소유자가 현재 계정이 아닙니다(홈 폴더가 외장 드라이브에 있을 때 흔히 발생). 서비스를 복구해도 해결되지 않습니다. 터미널에서 다음 명령을 실행한 후 앱을 다시 시작하세요:",
         "installSuccess": "서비스가 설치되었습니다",
-        "permissionFallback": "{{reason}} 일반 모드(Sidecar)로 전환했습니다. TUN에는 관리자 권한이 필요합니다. 안내에 따라 수정 후 서비스를 다시 설치하거나, 서비스 설치 없이 앱을 관리자 권한으로 실행하세요.",
+        "permissionFallback": "{{reason}} 사용자 모드로 전환했습니다. TUN에는 관리자 권한이 필요합니다. 안내에 따라 수정 후 서비스를 다시 설치하거나, 서비스 설치 없이 앱을 관리자 권한으로 실행하세요.",
         "permissionWritableReason": "일반 계정이 코어 파일이나 상위 폴더를 수정할 수 있어 서비스가 높은 권한으로 실행하는 것을 거부했습니다.",
         "permissionRejectedReason": "서비스가 코어 파일과 폴더를 높은 권한으로 안전하게 실행할 수 있는지 확인하지 못했습니다.",
         "permissionRepairGuide": "해결 방법 보기",
-        "sidecarFallback": "서비스가 코어를 시작하지 못해 Sidecar 모드로 계속 실행합니다. 서비스는 여전히 사용할 수 없습니다.",
+        "sidecarFallback": "서비스가 코어를 시작하지 못해 사용자 모드로 계속 실행합니다. 서비스는 여전히 사용할 수 없습니다.",
         "uninstallSuccess": "서비스가 제거되었습니다"
       },
       "updater": {

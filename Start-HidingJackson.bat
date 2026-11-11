@@ -1,5 +1,5 @@
 @echo off
-title HidingJackson - Launching Stealth Proxy Engine
+title HidingJackson - Portable & Installed Stealth Suite
 echo ==============================================================================
 echo                 HIDINGJACKSON - STEALTH EGRESS AND UNBLOCK ENGINE
 echo ==============================================================================
@@ -10,7 +10,11 @@ if "%ERRORLEVEL%"=="0" (
     echo   - Core engine is already active and running!
 ) else (
     echo   - Starting Mihomo Core Daemon...
-    start /B "" "C:\Program Files\Clash Verge\verge-mihomo.exe" -f "%APPDATA%\io.github.clash-verge-rev.clash-verge-rev\profiles\hidingjackson-global.yaml" -d "%APPDATA%\io.github.clash-verge-rev.clash-verge-rev"
+    if exist "%~dp0profiles\hidingjackson-global.yaml" (
+        start /B "" "%~dp0verge-mihomo.exe" -f "%~dp0profiles\hidingjackson-global.yaml" -d "%~dp0"
+    ) else (
+        start /B "" "%LOCALAPPDATA%\Programs\HidingJackson\verge-mihomo.exe" -f "%APPDATA%\io.github.hiding-jack-rev.hiding-jack-rev\profiles\hidingjackson-global.yaml" -d "%APPDATA%\io.github.hiding-jack-rev.hiding-jack-rev"
+    )
     timeout /t 2 /nobreak >nul
 )
 

@@ -668,14 +668,14 @@
         "uninstallFailed": "Hizmet kaldırılamadı",
         "reinstallFailed": "Hizmet yeniden kurulamadı",
         "repairFailed": "Hizmet onarılamadı",
-        "sidecarFailed": "Sidecar ile devam edilemedi",
+        "sidecarFailed": "Kullanıcı Modu ile devam edilemedi",
         "coreAlreadyRunning": "Çekirdek başlatılamıyor: bir çekirdek işlemi zaten çalışıyor. İlgili uygulamayı kapatın veya kalan işlemi sonlandırıp yeniden deneyin. Sorun devam ederse bilgisayarı yeniden başlatın."
       },
       "sysproxy": {
         "privilegeRequired": "Sistem vekil sunucusu ayarlanamıyor: macOS yetki yetersizliği nedeniyle değişikliği reddetti. HidingJackson hizmetini kurun; yöneticiyseniz Sistem Ayarları → Gizlilik ve Güvenlik bölümündeki gelişmiş seçeneklerden, sistem genelindeki ayarlar için yönetici parolası zorunluluğunu da kapatabilirsiniz.",
         "directFallback": "Sistem vekil sunucusu ayarlanamadı; trafik doğrudan bağlantıya geri döndürüldü.",
         "guardStopped": "Sistem vekil sunucusu koruması art arda birkaç başarısızlıktan sonra durdu. Sistem vekil sunucusu artık otomatik olarak korunmuyor.",
-        "sidecarWhileServiceReady": "Sistem vekil sunucusu ayarlanamadı: HidingJackson hizmeti hazır ancak çekirdek hâlâ Sidecar olarak çalışıyor. Hizmet moduna geçmek için çekirdeği yeniden başlatın.",
+        "sidecarWhileServiceReady": "Sistem vekil sunucusu ayarlanamadı: HidingJackson hizmeti hazır ancak çekirdek hâlâ Kullanıcı Modunda çalışıyor. Hizmet moduna geçmek için çekirdeği yeniden başlatın.",
         "coreNotReady": "Çekirdek çalışmadığı için sistem vekil sunucusu etkinleştirilemedi. Çekirdeği başlatın (veya HidingJackson hizmetini kurun/onarın) ve yeniden deneyin.",
         "systemCallFailed": "Bir Windows sistem çağrısı başarısız olduğu için sistem vekil sunucusu yazılamadı. Bu genellikle geçicidir, yeniden deneyin."
       }
@@ -692,11 +692,11 @@
       "clashService": {
         "appDataNotOwned": "Hizmet çekirdeği başlatmayı reddetti; çünkü diskte uygulama veri klasörünün sahibi hesabınız değil (ana klasör harici bir sürücüdeyse sık görülür). Hizmeti onarmak bunu düzeltmez. Bu komutu bir terminalde çalıştırın, ardından uygulamayı yeniden başlatın:",
         "installSuccess": "Hizmet Başarıyla Kuruldu",
-        "permissionFallback": "{{reason}} Sidecar moduna geçildi; TUN yönetici yetkisi gerektirir. Kılavuza göre sorunu düzeltip hizmeti yeniden yükleyin veya hizmeti yüklemeden uygulamayı yönetici olarak çalıştırın.",
+        "permissionFallback": "{{reason}} Kullanıcı Moduna geçildi; TUN yönetici yetkisi gerektirir. Kılavuza göre sorunu düzeltip hizmeti yeniden yükleyin veya hizmeti yüklemeden uygulamayı yönetici olarak çalıştırın.",
         "permissionWritableReason": "Normal hesaplar çekirdek dosyalarını veya üst klasörü değiştirebildiği için hizmet, çekirdeği yükseltilmiş yetkilerle çalıştırmayı reddetti.",
         "permissionRejectedReason": "Hizmet, çekirdek dosya ve klasörlerinin yükseltilmiş yetkilerle güvenle çalıştırılabileceğini doğrulayamadı.",
         "permissionRepairGuide": "Düzeltme adımlarını görüntüle",
-        "sidecarFallback": "Hizmet çekirdeği başlatamadı. Sidecar moduna geçildi; hizmet hâlâ kullanılamıyor.",
+        "sidecarFallback": "Hizmet çekirdeği başlatamadı. Kullanıcı Moduna geçildi; hizmet hâlâ kullanılamıyor.",
         "uninstallSuccess": "Hizmet Başarıyla Kaldırıldı"
       },
       "updater": {

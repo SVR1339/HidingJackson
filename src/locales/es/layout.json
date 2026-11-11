@@ -22,27 +22,27 @@
     },
     "serviceMigration": {
       "locationRefusedMessage": "El servicio no puede iniciar el núcleo porque su ruta de instalación o los permisos del directorio no superaron una comprobación de seguridad. Reinstale el servicio para restaurar sus archivos y permisos e inténtelo de nuevo. Windows puede solicitar autorización de administrador.",
-      "notAutoStartedMessage": "El tipo de inicio del servicio de HidingJackson se cambió a Manual o Deshabilitado (a menudo por herramientas de optimización), por lo que ya no se inicia con Windows; esta sesión usa Sidecar. Reinstale el servicio para restaurar el inicio automático. Windows puede solicitar autorización de administrador.",
+      "notAutoStartedMessage": "El tipo de inicio del servicio de HidingJackson se cambió a Manual o Deshabilitado (a menudo por herramientas de optimización), por lo que ya no se inicia con Windows; esta sesión usa el modo de usuario. Reinstale el servicio para restaurar el inicio automático. Windows puede solicitar autorización de administrador.",
       "title": "Service update required",
-      "message": "The HidingJackson service version does not match the version required by this app. Choose Reinstall Service to uninstall the existing service and install the required version, or continue with Sidecar for this session.",
+      "message": "The HidingJackson service version does not match the version required by this app. Choose Reinstall Service to uninstall the existing service and install the required version, or continue in User Mode for this session.",
       "checkingMessage": "Checking the system service status and current running mode. Please wait…",
-      "unavailableMessage": "The required HidingJackson service is not available. Install or repair it, or continue with Sidecar for this session.",
+      "unavailableMessage": "The required HidingJackson service is not available. Install or repair it, or continue in User Mode for this session.",
       "reinstall": "Reinstall service",
       "repair": "Repair service",
-      "continueSidecar": "Continue with Sidecar",
+      "continueSidecar": "Continue in User Mode",
       "success": "The HidingJackson service was updated successfully",
       "errors": {
         "actionFailed": "La operación del servicio falló",
         "stateRefreshFailed": "No se pudo actualizar el estado del servicio",
         "restartFailed": "No se pudo reiniciar el núcleo",
         "revalidationFailed": "No se pudo actualizar el estado de ejecución",
-        "sidecarFailed": "No se pudo continuar con Sidecar"
+        "sidecarFailed": "No se pudo continuar en modo de usuario"
       }
     },
     "sysproxyPrivilege": {
       "title": "No se pudo configurar el proxy del sistema",
       "message": "macOS rechazó el cambio por falta de permisos. Al instalar el servicio de HidingJackson, este aplicará los cambios de proxy como administrador y este aviso no volverá a aparecer.",
-      "serviceReadyMessage": "El servicio de HidingJackson está listo, pero el núcleo sigue ejecutándose como sidecar, por eso se rechazó la configuración del proxy. Cambiar al modo servicio lo resuelve sin reinstalar.",
+      "serviceReadyMessage": "El servicio de HidingJackson está listo, pero el núcleo sigue ejecutándose en modo de usuario, por eso se rechazó la configuración del proxy. Cambiar al modo servicio lo resuelve sin reinstalar.",
       "alternative": "Otra opción: desactiva «requerir contraseña de administrador para acceder a los ajustes de todo el sistema» en Ajustes del Sistema → Privacidad y seguridad → Avanzado.",
       "later": "Más tarde",
       "installing": "Instalando el servicio del sistema. Puede pedir una contraseña de administrador.",

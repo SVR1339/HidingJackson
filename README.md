@@ -28,10 +28,11 @@
 3. To stop and cleanly restore native direct internet, double-click **`Stop-HidingJackson.bat`**.
 
 ### Option B: Graphical Desktop Application
-1. Launch **`HidingJackson`** (`clash-verge.exe`).
+1. Launch **`HidingJackson`** (`HidingJackson.exe`).
 2. The **`HidingJackson Ultimate Global Suite`** profile is automatically active.
-3. Ensure **`System Proxy`** is toggled **`ON`**.
+3. Ensure **`System Proxy`** or **`TUN Mode`** is toggled **`ON`**.
 4. Choose **`⚡ Auto - Lowest Latency`** or **`🇺🇸 US Streaming`** to unlock Amazon Prime Video US, Netflix, Hulu, and HBO Max.
+5. Service management uses `hiding_jack_service`; run **`Clean-Restore.bat`** if a full reset of leftover services or locks is ever needed.
 
 ---
 

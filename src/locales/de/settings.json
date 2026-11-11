@@ -668,14 +668,14 @@
         "uninstallFailed": "Dienst konnte nicht deinstalliert werden",
         "reinstallFailed": "Dienst konnte nicht neu installiert werden",
         "repairFailed": "Dienst konnte nicht repariert werden",
-        "sidecarFailed": "Fortsetzung mit Sidecar fehlgeschlagen",
+        "sidecarFailed": "Fortsetzung im Benutzermodus fehlgeschlagen",
         "coreAlreadyRunning": "Der Kern kann nicht gestartet werden: Ein Kernprozess läuft bereits. Beenden Sie die zugehörige App oder den verbliebenen Prozess und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, starten Sie den Computer neu."
       },
       "sysproxy": {
         "privilegeRequired": "Systemproxy kann nicht gesetzt werden: macOS hat die Änderung mangels Berechtigung abgelehnt. Installieren Sie den hidingjackson-Dienst; als Administrator können Sie in den erweiterten Optionen unter Systemeinstellungen → Datenschutz & Sicherheit auch die Passwortpflicht für systemweite Einstellungen deaktivieren.",
         "directFallback": "Systemproxy konnte nicht gesetzt werden; der Datenverkehr wurde auf eine direkte Verbindung zurückgesetzt.",
         "guardStopped": "Der Systemproxy-Wächter wurde nach mehreren Fehlversuchen in Folge gestoppt. Der Systemproxy wird nicht mehr automatisch aufrechterhalten.",
-        "sidecarWhileServiceReady": "Der Systemproxy konnte nicht gesetzt werden: Der hidingjackson-Dienst ist bereit, der Kern läuft aber noch als Sidecar. Starten Sie den Kern neu, um in den Dienstmodus zu wechseln.",
+        "sidecarWhileServiceReady": "Der Systemproxy konnte nicht gesetzt werden: Der hidingjackson-Dienst ist bereit, der Kern läuft aber noch im Benutzermodus. Starten Sie den Kern neu, um in den Dienstmodus zu wechseln.",
         "coreNotReady": "Der Systemproxy konnte nicht aktiviert werden, da der Kern nicht läuft. Starten Sie den Kern (oder installieren/reparieren Sie den hidingjackson-Dienst) und versuchen Sie es erneut.",
         "systemCallFailed": "Der Systemproxy konnte nicht geschrieben werden, da ein Windows-Systemaufruf fehlschlug. Das ist meist vorübergehend, versuchen Sie es erneut."
       }
@@ -692,11 +692,11 @@
       "clashService": {
         "appDataNotOwned": "Der Dienst hat den Start des Kerns abgelehnt, weil der App-Datenordner auf dem Datenträger nicht Ihrem Konto gehört (häufig, wenn der Benutzerordner auf einem externen Laufwerk liegt). Eine Reparatur des Dienstes behebt das nicht. Führen Sie diesen Befehl im Terminal aus und starten Sie die App danach neu:",
         "installSuccess": "Service erfolgreich installiert",
-        "permissionFallback": "{{reason}} Zum Sidecar-Modus gewechselt; TUN benötigt Administratorrechte. Reparieren Sie den Dienst gemäß Anleitung und installieren Sie ihn neu, oder starten Sie die App als Administrator ohne Dienstinstallation.",
+        "permissionFallback": "{{reason}} In den Benutzermodus gewechselt; TUN benötigt Administratorrechte. Reparieren Sie den Dienst gemäß Anleitung und installieren Sie ihn neu, oder starten Sie die App als Administrator ohne Dienstinstallation.",
         "permissionWritableReason": "Normale Konten können Kerndateien oder übergeordnete Ordner ändern. Daher verweigert der Dienst die Ausführung mit erhöhten Rechten.",
         "permissionRejectedReason": "Der Dienst konnte nicht bestätigen, dass die Kerndateien und Ordner für die Ausführung mit erhöhten Rechten sicher sind.",
         "permissionRepairGuide": "Reparaturanleitung öffnen",
-        "sidecarFallback": "Der Dienst konnte den Kern nicht starten. Die Anwendung läuft im Sidecar-Modus weiter; der Dienst bleibt nicht verfügbar.",
+        "sidecarFallback": "Der Dienst konnte den Kern nicht starten. Die Anwendung läuft im Benutzermodus weiter; der Dienst bleibt nicht verfügbar.",
         "uninstallSuccess": "Service erfolgreich deinstalliert"
       },
       "updater": {

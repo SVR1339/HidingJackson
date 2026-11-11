@@ -668,14 +668,14 @@
         "uninstallFailed": "Falha ao desinstalar o serviço",
         "reinstallFailed": "Falha ao reinstalar o serviço",
         "repairFailed": "Falha ao reparar o serviço",
-        "sidecarFailed": "Falha ao continuar com o Sidecar",
+        "sidecarFailed": "Falha ao continuar no Modo Usuário",
         "coreAlreadyRunning": "Não é possível iniciar o núcleo: já há um processo do núcleo em execução. Feche o aplicativo correspondente ou encerre o processo remanescente e tente novamente. Se o problema persistir, reinicie o computador."
       },
       "sysproxy": {
         "privilegeRequired": "Não é possível definir o proxy do sistema: o macOS recusou a alteração por falta de privilégios. Instale o serviço do HidingJackson; um administrador também pode desativar a exigência de senha de administrador para configurações do sistema, nas opções avançadas em Ajustes do Sistema → Privacidade e Segurança.",
         "directFallback": "Falha ao definir o proxy do sistema; o tráfego foi revertido para conexão direta.",
         "guardStopped": "A proteção do proxy do sistema parou após falhar várias vezes ao executar. O proxy do sistema não está mais sendo mantido.",
-        "sidecarWhileServiceReady": "Não foi possível definir o proxy do sistema porque o núcleo ainda está em execução como Sidecar, embora o serviço do HidingJackson esteja pronto. Reinicie o núcleo para mudar para o modo serviço.",
+        "sidecarWhileServiceReady": "Não foi possível definir o proxy do sistema porque o núcleo ainda está em execução no Modo Usuário, embora o serviço do HidingJackson esteja pronto. Reinicie o núcleo para mudar para o modo serviço.",
         "coreNotReady": "Não foi possível ativar o proxy do sistema porque o núcleo não está em execução. Inicie o núcleo (ou instale/repare o serviço do HidingJackson) e tente novamente.",
         "systemCallFailed": "Não foi possível gravar o proxy do sistema porque uma chamada de sistema do Windows falhou. Geralmente é temporário, então tente novamente."
       }
@@ -692,11 +692,11 @@
       "clashService": {
         "appDataNotOwned": "O serviço se recusou a iniciar o núcleo porque, no disco, a pasta de dados do aplicativo não pertence à sua conta (comum quando a pasta pessoal está em um disco externo). Reparar o serviço não resolverá isso. Execute este comando em um terminal e reinicie o aplicativo:",
         "installSuccess": "Serviço Instalado com Sucesso",
-        "permissionFallback": "{{reason}} Mudou para o modo normal (Sidecar); o TUN requer privilégios de administrador. Siga o guia para corrigir e reinstalar o serviço. Se preferir não corrigir ou não souber como, execute o aplicativo como administrador sem instalar o serviço.",
+        "permissionFallback": "{{reason}} Mudou para o Modo Usuário; o TUN requer privilégios de administrador. Siga o guia para corrigir e reinstalar o serviço. Se preferir não corrigir ou não souber como, execute o aplicativo como administrador sem instalar o serviço.",
         "permissionWritableReason": "Contas comuns podem modificar os arquivos do núcleo ou uma pasta superior, então o serviço se recusou a executar o núcleo com privilégios elevados.",
         "permissionRejectedReason": "O serviço não conseguiu confirmar que os arquivos e pastas do núcleo são seguros para execução com privilégios elevados.",
         "permissionRepairGuide": "Ver instruções de reparo",
-        "sidecarFallback": "O serviço não conseguiu iniciar o núcleo. Mudou para o modo Sidecar; o serviço continua indisponível.",
+        "sidecarFallback": "O serviço não conseguiu iniciar o núcleo. Mudou para o Modo Usuário; o serviço continua indisponível.",
         "uninstallSuccess": "Serviço Desinstalado com Sucesso"
       },
       "updater": {
