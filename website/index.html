@@ -224,13 +224,35 @@
     <section id="fleet" class="py-20 bg-surface-900/60 border-y border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="text-center max-w-3xl mx-auto mb-10">
           <div class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">High Availability Fleet</div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Zero Dead Proxies. 100% Green Latencies.</h2>
           <p class="text-slate-400 text-sm sm:text-base">
             Unlike legacy applications flooded with dead endpoints reporting red <span class="text-red-400 font-mono">Error</span>,
             HidingJackson features continuous socket health probing that filters out dead servers and routes exclusively through verified responsive nodes.
           </p>
+        </div>
+
+        <!-- Live Subscription Import Box -->
+        <div class="glass p-5 rounded-2xl border border-cyan-500/30 mb-10 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3 text-left">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0">
+              <i data-lucide="rss" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white flex items-center gap-2">
+                Official Live Subscription Endpoint
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-mono">200 Verified Nodes</span>
+              </div>
+              <div class="text-xs text-slate-400 font-mono truncate max-w-[280px] sm:max-w-[450px]">
+                https://www.bsvr.work/hidingjackson/profiles/hidingjackson-global.yaml
+              </div>
+            </div>
+          </div>
+          <button onclick="copySubscriptionUrl()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 transition-all">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span id="sub-copy-text">Copy Subscription URL</span>
+          </button>
         </div>
 
         <!-- Live Node Cards Table -->
@@ -600,6 +622,16 @@ docker compose up -d
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Copy Subscription URL Helper
+    function copySubscriptionUrl() {
+      const url = 'https://www.bsvr.work/hidingjackson/profiles/hidingjackson-global.yaml';
+      navigator.clipboard.writeText(url).then(() => {
+        const txt = document.getElementById('sub-copy-text');
+        txt.innerText = 'Copied to Clipboard!';
+        setTimeout(() => { txt.innerText = 'Copy Subscription URL'; }, 2000);
+      });
+    }
 
     // Copy command helper
     function copyVerifyCmd() {

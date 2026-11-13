@@ -1,0 +1,2694 @@
+mixed-port: 7897
+external-controller: 127.0.0.1:9097
+secret: ''
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+tun:
+  enable: false
+  stack: mixed
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+dns:
+  enable: true
+  listen: :53
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
+  - '*.arpa'
+  - time.*.com
+  - ntp.*.com
+  - '*.msftncsi.com'
+  - www.msftconnecttest.com
+  - localhost.*
+  - '*.localdomain'
+  default-nameserver:
+  - 1.1.1.1
+  - 8.8.8.8
+  - 9.9.9.9
+  nameserver:
+  - https://1.1.1.1/dns-query
+  - https://dns.google/dns-query
+  - 1.1.1.1
+  - 8.8.8.8
+  fallback:
+  - https://9.9.9.9/dns-query
+  - 9.9.9.9
+  fallback-filter:
+    geoip: false
+proxies:
+- name: ⚡ [Global] Ultra-Fast 01 (VLESS · 12ms)
+  network: ws
+  port: 443
+  server: 104.17.210.74
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 02 (VLESS · 12ms)
+  network: ws
+  port: 443
+  server: 172.64.152.52
+  servername: cf.zhahui.de5.net
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2d4b819d-6fa6-4db2-8434-61e7db0fe93c
+- name: ⚡ [Global] Ultra-Fast 03 (VLESS · 13ms)
+  network: ws
+  port: 443
+  server: 104.18.42.98
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 04 (VLESS · 13ms)
+  network: ws
+  port: 443
+  server: 104.16.0.1
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 05 (VLESS · 13ms)
+  network: ws
+  port: 443
+  server: 104.19.33.25
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 06 (TROJAN · 13ms)
+  password: humanity
+  port: 443
+  server: 104.16.7.70
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 07 (VLESS · 14ms)
+  network: ws
+  port: 443
+  server: 104.17.50.227
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 08 (VLESS · 14ms)
+  network: ws
+  port: 443
+  server: 104.17.50.53
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 09 (VLESS · 14ms)
+  network: ws
+  port: 443
+  server: 104.16.10.2
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 10 (VLESS · 14ms)
+  network: ws
+  port: 443
+  server: 104.19.48.107
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 11 (VLESS · 14ms)
+  network: ws
+  port: 443
+  server: saas.sin.fan
+  servername: vp22.1145678.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+- name: ⚡ [Global] Ultra-Fast 12 (VLESS · 14ms)
+  network: ws
+  port: 14430
+  server: 13.140.56.100
+  type: vless
+  udp: true
+  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
+- name: ⚡ [Global] Ultra-Fast 13 (VLESS · 15ms)
+  network: ws
+  port: 443
+  server: 104.19.12.94
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 14 (VLESS · 15ms)
+  network: ws
+  port: 443
+  server: 104.24.31.89
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 15 (VLESS · 15ms)
+  network: ws
+  port: 443
+  server: 104.16.10.48
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 16 (VLESS · 15ms)
+  network: ws
+  port: 443
+  server: 104.16.10.135
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 17 (TROJAN · 15ms)
+  password: humanity
+  port: 443
+  server: 104.18.8.83
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 18 (TROJAN · 16ms)
+  password: humanity
+  port: 443
+  server: 104.19.95.153
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 19 (TROJAN · 16ms)
+  password: humanity
+  port: 443
+  server: 8.6.112.206
+  skip-cert-verify: false
+  sni: www.trusteeforward.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 20 (TROJAN · 16ms)
+  password: humanity
+  port: 443
+  server: 172.64.231.133
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 21 (VLESS · 16ms)
+  network: ws
+  port: 443
+  server: 104.16.10.72
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 22 (VLESS · 17ms)
+  network: ws
+  port: 443
+  server: 104.16.10.56
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 23 (VMESS · 17ms)
+  network: ws
+  port: 443
+  server: www.shopify.com
+  servername: guanwang.awsno.com
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+- name: ⚡ [Global] Ultra-Fast 24 (TROJAN · 17ms)
+  password: humanity
+  port: 443
+  server: 45.130.125.126
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 25 (VLESS · 19ms)
+  network: ws
+  port: 8080
+  server: 170.114.46.6
+  type: vless
+  udp: true
+  uuid: 990bf436-f1b9-4e7f-857d-14378acc4ae5
+- name: ⚡ [US] Ultra-Fast 01 (VLESS · 20ms)
+  network: ws
+  port: 8080
+  server: support.zoom.us
+  type: vless
+  udp: true
+  uuid: 990bf436-f1b9-4e7f-857d-14378acc4ae5
+- name: ⚡ [Global] Ultra-Fast 26 (VLESS · 22ms)
+  network: ws
+  port: 443
+  server: 104.16.10.22
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 27 (VLESS · 23ms)
+  network: raw
+  port: 2053
+  reality-opts:
+    public-key: PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU
+    short-id: 9980e0609b0d3891
+  server: 194.61.31.126
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 1d4e18bd-1f26-4915-b35a-7ace4826e76a
+- name: ⚡ [Global] Ultra-Fast 28 (TROJAN · 23ms)
+  password: humanity
+  port: 443
+  server: 45.128.76.242
+  skip-cert-verify: false
+  sni: www.trusteeforward.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 29 (TROJAN · 23ms)
+  password: humanity
+  port: 443
+  server: 172.66.40.99
+  skip-cert-verify: true
+  sni: www.trusteeforward.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 30 (VLESS · 24ms)
+  network: ws
+  port: 443
+  server: 104.18.40.171
+  servername: wallweb-boi.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 8895be79-9817-4011-b81a-14a35a3d328e
+- name: ⚡ [Global] Ultra-Fast 31 (TROJAN · 24ms)
+  password: humanity
+  port: 443
+  server: 104.17.206.147
+  skip-cert-verify: false
+  sni: www.trusteeforward.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 32 (VLESS · 25ms)
+  network: ws
+  port: 8080
+  server: 170.114.45.6
+  type: vless
+  udp: true
+  uuid: 990bf436-f1b9-4e7f-857d-14378acc4ae5
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 33 (VMESS · 25ms)
+  network: ws
+  port: 8443
+  server: chatgpt.com
+  servername: v2ray1.dozapp.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+- name: ⚡ [Global] Ultra-Fast 34 (TROJAN · 25ms)
+  password: humanity
+  port: 443
+  server: www.calmlunch.com
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 35 (TROJAN · 26ms)
+  password: humanity
+  port: 443
+  server: 45.130.125.75
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 36 (VLESS · 28ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: 3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q
+    short-id: 6bdc8320
+  server: 178.212.35.198
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6bdc8320-7eae-46fc-be08-f5f54e65dfc8
+- name: ⚡ [Global] Ultra-Fast 37 (TROJAN · 28ms)
+  password: humanity
+  port: 443
+  server: 104.17.121.43
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 38 (TROJAN · 28ms)
+  password: humanity
+  port: 443
+  server: 104.16.72.50
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 39 (VLESS · 29ms)
+  network: ws
+  port: 443
+  server: 104.19.164.155
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 40 (VLESS · 29ms)
+  network: ws
+  port: 443
+  server: 104.16.111.102
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 41 (VLESS · 29ms)
+  network: ws
+  port: 443
+  server: 104.16.10.104
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 42 (VLESS · 30ms)
+  network: tcp
+  port: 40443
+  reality-opts:
+    public-key: g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw
+    short-id: 68a8
+  server: 5.253.42.164
+  servername: deepl.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: e99ba96d-dec8-42eb-be53-19e71eef7cab
+- name: ⚡ [Global] Ultra-Fast 43 (VLESS · 30ms)
+  network: ws
+  port: 443
+  server: 104.16.10.185
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 44 (VMESS · 30ms)
+  network: ws
+  port: 2083
+  server: 162.159.130.234
+  servername: cdn.sfacg.uk
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+- name: ⚡ [Global] Ultra-Fast 45 (TROJAN · 30ms)
+  password: humanity
+  port: 443
+  server: 104.17.121.9
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 46 (VLESS · 31ms)
+  network: ws
+  port: 443
+  server: www.speedtest.net
+  servername: wallweb4.pages.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: ec23f217-23a1-4f62-b98d-ba56070de89c
+- name: ⚡ [Global] Ultra-Fast 47 (TROJAN · 31ms)
+  password: humanity
+  port: 443
+  server: 104.25.240.193
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 48 (TROJAN · 31ms)
+  password: humanity
+  port: 443
+  server: 185.18.250.252
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 49 (VLESS · 33ms)
+  network: ws
+  port: 443
+  server: 122.176.216.52
+  servername: app-6ada5023.deploy.meerasolution.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88
+- name: ⚡ [Global] Ultra-Fast 50 (VLESS · 37ms)
+  network: ws
+  port: 443
+  server: 104.16.10.234
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 51 (VLESS · 38ms)
+  network: ws
+  port: 2053
+  server: saas.sin.fan
+  servername: vp11.1145678.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+- name: ⚡ [Global] Ultra-Fast 52 (TROJAN · 42ms)
+  password: humanity
+  port: 443
+  server: 185.18.250.245
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 53 (TROJAN · 45ms)
+  password: humanity
+  port: 443
+  server: 104.25.0.1
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 54 (VMESS · 46ms)
+  network: tcp
+  port: 18000
+  server: 149.88.23.207
+  type: vmess
+  udp: true
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- name: ⚡ [Global] Ultra-Fast 55 (TROJAN · 46ms)
+  password: humanity
+  port: 443
+  server: 104.16.71.213
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 56 (TROJAN · 46ms)
+  password: humanity
+  port: 443
+  server: 104.18.32.47
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 57 (VLESS · 47ms)
+  network: tcp
+  port: 443
+  server: 139.162.27.96
+  servername: aka.ms
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: f1178fbe-1420-4eef-b087-4f33b32b4a19
+- cipher: rc4-md5
+  name: ⚡ [Global] Ultra-Fast 58 (SS · 47ms)
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.235.240
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 59 (VMESS · 48ms)
+  network: raw
+  port: 18000
+  server: 149.88.23.202
+  type: vmess
+  udp: true
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 60 (VMESS · 48ms)
+  network: tcp
+  port: 18000
+  server: ww11.levikogjgfdd.ir
+  type: vmess
+  udp: true
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 61 (VLESS · 50ms)
+  network: tcp
+  port: 21004
+  reality-opts:
+    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+    short-id: 2df2bd9d8366cef1
+  server: 103.106.229.37
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 62 (VLESS · 50ms)
+  network: raw
+  port: 21004
+  reality-opts:
+    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+    short-id: 2df2bd9d8366cef1
+  server: 511.150333.xyz
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+- name: ⚡ [Global] Ultra-Fast 63 (VLESS · 50ms)
+  network: ws
+  port: 443
+  server: 188.114.98.0
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 64 (VLESS · 50ms)
+  network: ws
+  port: 2096
+  server: 139.162.27.96
+  servername: free-server.techsonic.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+- cipher: rc4-md5
+  name: ⚡ [Global] Ultra-Fast 65 (SS · 51ms)
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.227.236
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 66 (VLESS · 51ms)
+  network: raw
+  port: 443
+  reality-opts:
+    public-key: EeLAX-BAjzSdRes-zpUFzVOYsBedmP8lUOHhXXJFXyI
+    short-id: 5a42dbd7e26a0415
+  server: 172.237.88.103
+  servername: zoom.us
+  tls: true
+  type: vless
+  udp: true
+  uuid: efd11a89-7506-44ce-95b6-6654859f155b
+- cipher: rc4-md5
+  name: ⚡ [Global] Ultra-Fast 67 (SS · 51ms)
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.235.122
+  type: ss
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 68 (TROJAN · 51ms)
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 149.28.130.108
+  skip-cert-verify: false
+  sni: searchcreativejobsandshowcaseyourartistictalents.com
+  type: trojan
+  udp: true
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 69 (VLESS · 51ms)
+  network: tcp
+  port: 2053
+  reality-opts:
+    public-key: TpWeZocgNOygOhMo0l7oJawPu7STkn9D-SOa0UppcyY
+    short-id: cd7e85995ae2afc9
+  server: 45.132.75.213
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: f46182d1-e13b-47d3-97e2-fa5426a93e7c
+- name: ⚡ [Global] Ultra-Fast 70 (VLESS · 51ms)
+  network: ws
+  port: 443
+  server: 104.21.6.186
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 71 (VLESS · 52ms)
+  network: tcp
+  port: 47881
+  reality-opts:
+    public-key: 6XmXX1QXGodmtqU37Zx9CDHnCnPtonRdq8ieLmt__g4
+    short-id: 38d72071
+  server: 134.185.81.5
+  servername: www.tesla.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 59b203b2-b1bc-4e9c-a9e5-ccb8f691bf72
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 72 (VMESS · 52ms)
+  network: ws
+  port: 443
+  server: guanwang.awsno.com
+  servername: guanwang.awsno.com
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+- name: ⚡ [Global] Ultra-Fast 73 (VLESS · 52ms)
+  network: ws
+  port: 443
+  server: 104.21.34.106
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 74 (VLESS · 52ms)
+  network: tcp
+  port: 21001
+  reality-opts:
+    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+    short-id: ab39fc68ab3dee81
+  server: 511.150333.xyz
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+- name: ⚡ [Global] Ultra-Fast 75 (VLESS · 52ms)
+  network: ws
+  port: 443
+  server: 172.67.217.240
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 76 (VLESS · 53ms)
+  network: ws
+  port: 443
+  server: 104.21.70.21
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: random
+  name: ⚡ [Global] Ultra-Fast 77 (VLESS · 53ms)
+  network: tcp
+  port: 21003
+  reality-opts:
+    public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
+    short-id: f3602a3a1cf928b7
+  server: 510.150333.xyz
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 67952583-8572-42e1-943d-0602794f885b
+- client-fingerprint: random
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 78 (VLESS · 54ms)
+  network: tcp
+  port: 24146
+  reality-opts:
+    public-key: VeluC9A7XDurAWQNgXKShS2SJSgoK79QHFgiAMYrvGo
+    short-id: 7205d9079521832c
+  server: 54.251.9.130
+  servername: www.intel.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 9d9a048b-3aea-4b3e-b106-1106bf301feb
+- name: ⚡ [Global] Ultra-Fast 79 (VLESS · 54ms)
+  network: ws
+  port: 443
+  server: 188.114.97.6
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 80 (VLESS · 54ms)
+  network: ws
+  port: 443
+  server: 162.159.254.3
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 81 (VLESS · 55ms)
+  network: tcp
+  port: 21001
+  reality-opts:
+    public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
+    short-id: a51c3ccb2320024a
+  server: 510.150333.xyz
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 67952583-8572-42e1-943d-0602794f885b
+- name: ⚡ [Global] Ultra-Fast 82 (VLESS · 56ms)
+  network: ws
+  port: 443
+  server: 104.24.0.1
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 83 (VLESS · 59ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: cwWhNuekusD1iPZZ--7G891dU9PCacxyCYwsZxOApHA
+    short-id: b2efed6d157e7bb0
+  server: 5.34.177.164
+  servername: gateway.icloud.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ca678d26-5435-4d13-b378-06c4c3b070ff
+- client-fingerprint: random
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 84 (VLESS · 60ms)
+  network: tcp
+  port: 10574
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.0.111.82
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- name: ⚡ [Global] Ultra-Fast 85 (VLESS · 61ms)
+  network: ws
+  port: 2096
+  server: saas.sin.fan
+  servername: vp13.1145678.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 86 (VLESS · 61ms)
+  network: tcp
+  port: 21002
+  reality-opts:
+    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+    short-id: 3ab8d93dd9b1a5be
+  server: 511.150333.xyz
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 87 (VLESS · 61ms)
+  network: tcp
+  port: 12972
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.0.111.82
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- name: ⚡ [Global] Ultra-Fast 88 (VLESS · 61ms)
+  network: ws
+  port: 443
+  server: 104.21.70.228
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- cipher: rc4-md5
+  name: ⚡ [Global] Ultra-Fast 89 (SS · 63ms)
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 68.183.227.4
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 90 (VMESS · 63ms)
+  network: ws
+  port: 8443
+  server: 104.21.91.53
+  servername: v2ray1.dozapp.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+- name: ⚡ [Global] Ultra-Fast 91 (VLESS · 67ms)
+  network: ws
+  port: 443
+  server: 104.27.46.35
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 92 (VLESS · 68ms)
+  network: ws
+  port: 2053
+  server: fast.145779.xyz
+  servername: fast.145779.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 93 (VLESS · 70ms)
+  network: tcp
+  port: 21001
+  reality-opts:
+    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+    short-id: ab39fc68ab3dee81
+  server: 103.106.229.37
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+- name: ⚡ [Global] Ultra-Fast 94 (VLESS · 71ms)
+  network: ws
+  port: 14430
+  server: 95.174.68.188
+  type: vless
+  udp: true
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 95 (VLESS · 71ms)
+  network: tcp
+  port: 17623
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.0.111.82
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- name: ⚡ [Global] Ultra-Fast 96 (TROJAN · 71ms)
+  password: humanity
+  port: 443
+  server: 172.67.223.48
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 97 (TROJAN · 75ms)
+  password: humanity
+  port: 443
+  server: 172.67.203.46
+  skip-cert-verify: false
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 98 (VLESS · 76ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: MiQ5B4j6In71lWvCi0vO_DkVSDb7sii34bh5efBMswk
+    short-id: 3c032a7e
+  server: 45.154.26.63
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ff85e702-b605-4109-884d-2c1f065d0954
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 99 (VLESS · 76ms)
+  network: tcp
+  port: 21001
+  reality-opts:
+    public-key: EXU8eOS1kf_ROqC68NO-zbzRFGx7U5zE6WvjxRzYeTo
+    short-id: b6dfd5c750351c57
+  server: 103.238.227.211
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 52d2187c-34e1-40fd-a6f5-0a74ff7d3e9a
+- name: ⚡ [Global] Ultra-Fast 100 (VLESS · 78ms)
+  network: ws
+  port: 443
+  server: 104.16.111.195
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 101 (VLESS · 82ms)
+  network: tcp
+  port: 21003
+  reality-opts:
+    public-key: EXU8eOS1kf_ROqC68NO-zbzRFGx7U5zE6WvjxRzYeTo
+    short-id: eb9539689690d35c
+  server: 103.238.227.211
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 52d2187c-34e1-40fd-a6f5-0a74ff7d3e9a
+- name: ⚡ [Global] Ultra-Fast 102 (VLESS · 82ms)
+  network: ws
+  port: 443
+  server: 104.21.0.87
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 103 (VLESS · 86ms)
+  network: ws
+  port: 443
+  server: 172.67.156.147
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 104 (VLESS · 92ms)
+  network: ws
+  port: 443
+  server: 104.21.33.59
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: ⚡ [Global] Ultra-Fast 105 (VLESS · 92ms)
+  network: ws
+  port: 2053
+  server: 172.67.199.126
+  servername: fast.145779.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+- name: ⚡ [Global] Ultra-Fast 106 (VLESS · 103ms)
+  network: ws
+  port: 22573
+  server: 84.235.244.108
+  type: vless
+  udp: true
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+- client-fingerprint: edge
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 107 (VLESS · 114ms)
+  network: tcp
+  port: 18967
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.39.4.109
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 108 (VLESS · 115ms)
+  network: tcp
+  port: 10583
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.114.220.22
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 109 (VLESS · 115ms)
+  network: tcp
+  port: 13672
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.39.4.109
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 110 (SS · 115ms)
+  password: 3eOFeNssde7PYYMv
+  port: 80
+  server: 84.247.155.196
+  type: ss
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 111 (VLESS · 115ms)
+  network: grpc
+  port: 443
+  server: 31.76.91.31
+  servername: b.jp-1.bnc-gt.co.uk
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 7b22dce8-7ebd-425b-8ca4-7b6190321985
+- name: ⚡ [Global] Ultra-Fast 112 (VLESS · 116ms)
+  network: ws
+  port: 8443
+  server: 154.31.114.162
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- client-fingerprint: safari
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 113 (VLESS · 117ms)
+  network: tcp
+  port: 19645
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.114.220.22
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- name: ⚡ [Global] Ultra-Fast 114 (HYSTERIA2 · 117ms)
+  password: usqmqUKJFIlCmvkCNSY64L3k
+  port: 443
+  server: 8.209.247.109
+  skip-cert-verify: true
+  sni: bing.com
+  type: hysteria2
+- client-fingerprint: qq
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 115 (VLESS · 119ms)
+  network: tcp
+  port: 18007
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
+  server: 3.114.220.22
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+- cipher: aes-256-cfb
+  name: ⚡ [Global] Ultra-Fast 116 (SS · 123ms)
+  password: qwerREWQ@@
+  port: 6123
+  server: 211.178.105.134
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: ⚡ [Global] Ultra-Fast 117 (SS · 125ms)
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.240
+  type: ss
+  udp: true
+- client-fingerprint: random
+  name: ⚡ [Global] Ultra-Fast 118 (VLESS · 125ms)
+  network: tcp
+  port: 2053
+  reality-opts:
+    public-key: F6C33iIbfmt1mUsuLTarIC8ygdHKMqsaGvrSQltyxUo
+    short-id: 429499c03d4cc8a0
+  server: 151.245.106.49
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: a2de9567-9646-45a9-a410-7303a43bdb6c
+- name: ⚡ [Global] Ultra-Fast 119 (VLESS · 128ms)
+  network: ws
+  port: 8443
+  server: n04.jinggai.online
+  servername: n04.jinggai.online
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+- cipher: rc4-md5
+  name: ⚡ [Global] Ultra-Fast 120 (SS · 129ms)
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 169.150.210.233
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 121 (SS · 129ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.165
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 122 (VLESS · 130ms)
+  network: tcp
+  port: 2053
+  reality-opts:
+    public-key: hieuCHb3HYdDYHmTDyWw2SGqyfo36AVuA-wSiZMdU1M
+    short-id: 9922313fffed1c63
+  server: 46.250.250.149
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: b4caaf57-ad77-4948-a6f5-51b3513799bf
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 123 (VLESS · 130ms)
+  network: tcp
+  port: 8443
+  reality-opts:
+    public-key: L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI
+    short-id: 16036bbef04d0509
+  server: 45.90.57.119
+  servername: twitch.tv
+  tls: true
+  type: vless
+  udp: true
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
+- name: ⚡ [Global] Ultra-Fast 124 (TROJAN · 130ms)
+  password: MiTiVPN
+  port: 443
+  server: 167.82.64.120
+  skip-cert-verify: true
+  sni: firefox.com
+  type: trojan
+  udp: true
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 125 (SS · 131ms)
+  password: 3eOFeNssde7PYYMv
+  port: 443
+  server: 84.247.155.196
+  type: ss
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 126 (VLESS · 131ms)
+  network: ws
+  port: 443
+  server: 43.170.8.95
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 127 (VMESS · 132ms)
+  network: tcp
+  port: 1234
+  server: 45.90.106.24
+  servername: 45.90.106.24
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 128 (VLESS · 134ms)
+  network: grpc
+  port: 51671
+  reality-opts:
+    public-key: -5PowNUY37Pi01YKO9fjRTrum1m_9n6XauaPDpmOJzU
+    short-id: 2fed44d8c59f7e71
+  server: 152.228.139.33
+  servername: www.sony.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 75cc7568-abb0-46a8-88be-8137d3c647d4
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 129 (VLESS · 134ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  server: edge.bookmai.com
+  servername: mother-earth.fyi
+  tls: true
+  type: vless
+  udp: true
+  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
+- client-fingerprint: random
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 130 (VLESS · 134ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8
+    short-id: 15affa0af66dfc79
+  server: 130.12.242.106
+  servername: deepl.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: bc058e69-0444-4c7b-98da-bd67f0b143da
+- name: ⚡ [Global] Ultra-Fast 131 (TROJAN · 134ms)
+  password: humanity
+  port: 443
+  server: 162.159.91.211
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 132 (SS · 135ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.47
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 133 (SS · 135ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.193
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: ⚡ [US] Ultra-Fast 02 (VMESS · 135ms)
+  network: ws
+  port: 443
+  server: nickgus.cc.cd
+  servername: nickgus.cc.cd
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 56eee791-99e8-4e11-9d27-539b46c14368
+- name: ⚡ [Global] Ultra-Fast 134 (VLESS · 135ms)
+  network: ws
+  port: 8443
+  server: 103.148.73.173
+  servername: ty986gfazs.cainiaohub.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 135 (VMESS · 135ms)
+  network: tcp
+  port: 1234
+  server: 162.19.204.71
+  servername: supervpn.super.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+- name: ⚡ [Global] Ultra-Fast 136 (TROJAN · 135ms)
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 208.69.78.208
+  skip-cert-verify: false
+  sni: resources.yourultimateprofessionalcareerhub.com
+  type: trojan
+  udp: true
+- cipher: aes-128-gcm
+  name: ⚡ [Global] Ultra-Fast 137 (SS · 136ms)
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.241
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 138 (SS · 136ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 443
+  server: 82.38.31.162
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 139 (SS · 137ms)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.72
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 140 (SS · 137ms)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 185.164.175.81
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 141 (VLESS · 137ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  server: 9.247.23.209
+  servername: mother-earth.fyi
+  tls: true
+  type: vless
+  udp: true
+  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 142 (VLESS · 137ms)
+  network: tcp
+  port: 10105
+  reality-opts:
+    public-key: PFC3JN1er1JE2vAemwRhNjewz8I4NUWP4XHf2Dza4Es
+    short-id: 12e321badd07906e
+  server: 91.107.179.0
+  servername: play.google.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ad3f4a0a-a89f-498e-9869-a93c8fa185b1
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 143 (SS · 138ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 193.29.139.198
+  type: ss
+  udp: true
+- client-fingerprint: random
+  name: ⚡ [Global] Ultra-Fast 144 (VLESS · 138ms)
+  network: tcp
+  port: 2053
+  reality-opts:
+    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
+    short-id: ad86e2d52ff40ebd
+  server: 208.69.78.217
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
+- name: ⚡ [US] Ultra-Fast 03 (VLESS · 138ms)
+  network: ws
+  port: 22573
+  server: uae.unixzone.us
+  type: vless
+  udp: true
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+- cipher: aes-128-gcm
+  name: ⚡ [Global] Ultra-Fast 145 (SS · 140ms)
+  password: shadowsocks
+  port: 443
+  server: 149.22.87.204
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 146 (VLESS · 141ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY
+    short-id: 19253fae84102271
+  server: 45.90.59.15
+  servername: www.cloudflare.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3950b45e-740d-4dca-ac95-505ec8534592
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 147 (SS · 141ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.156
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 148 (SS · 142ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.202
+  type: ss
+  udp: true
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 149 (VLESS · 142ms)
+  network: tcp
+  port: 2053
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: d051f678212f9d54
+  server: 51.89.194.151
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+- name: ⚡ [Global] Ultra-Fast 150 (VLESS · 143ms)
+  network: ws
+  port: 14430
+  server: 138.124.70.41
+  type: vless
+  udp: true
+  uuid: 6cc745e3-4eb9-46c8-a4a1-85dee7b87edc
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 151 (SS · 144ms)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.27
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 152 (SS · 144ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 178.83.185.156
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 153 (VLESS · 144ms)
+  network: tcp
+  port: 23576
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  server: 51.158.206.26
+  servername: fuck.rkn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 154 (VLESS · 144ms)
+  network: tcp
+  port: 23576
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  server: 62.210.91.10
+  servername: fuck.rkn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- client-fingerprint: random
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 155 (VLESS · 144ms)
+  network: tcp
+  port: 10444
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  server: 138.124.125.193
+  servername: ads.x5.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 156 (VLESS · 144ms)
+  network: tcp
+  port: 23576
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  server: 51.158.206.86
+  servername: fuck.rkn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 157 (SS · 145ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.39
+  type: ss
+  udp: true
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 158 (VLESS · 145ms)
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ
+    short-id: 27350908de933e09
+  server: 5.149.249.94
+  servername: nlb.kosmosapp.net
+  tls: true
+  type: vless
+  udp: true
+  uuid: ed77c1dc-3df2-412b-b855-49286f979c21
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 159 (VLESS · 145ms)
+  network: tcp
+  port: 2053
+  reality-opts:
+    public-key: g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w
+    short-id: bfe58beb41f1d09f
+  server: 51.77.217.70
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: bf16ee0c-8b3c-41e4-ab3a-8b48033c404e
+- client-fingerprint: firefox
+  name: ⚡ [Global] Ultra-Fast 160 (VLESS · 145ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: goey7Sc4Xm6Nvdukb_DuoUnrkPSV0p4hPWbAmk2_AHc
+    short-id: ecf1d9f7caa6ba67
+  server: 2.27.118.10
+  servername: ph-nl-s3784.cybercat.network
+  tls: true
+  type: vless
+  udp: true
+  uuid: d9fe2431-8351-41eb-b956-75d96dec5d4a
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 161 (SS · 146ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.48
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 162 (SS · 146ms)
+  password: 6heexyz
+  port: 443
+  server: 54.36.174.140
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 163 (VLESS · 147ms)
+  network: grpc
+  port: 35108
+  reality-opts:
+    public-key: X_lOw5Zz4SJBa1cRHV4dAq5msYE-ClY5-WNcBmBWRxg
+    short-id: 52add08b86a5ccea
+  server: 152.228.139.33
+  servername: www.nvidia.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 81dc0b61-f9fe-4ad6-8b4e-b8c067b73712
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 164 (VMESS · 147ms)
+  network: tcp
+  port: 1234
+  server: 141.95.65.9
+  servername: supervpn.super.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 165 (SS · 148ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.66
+  type: ss
+  udp: true
+- cipher: rc4-md5
+  name: ⚡ [Global] Ultra-Fast 166 (SS · 148ms)
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 98.98.142.161
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 167 (SS · 148ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.190
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 168 (SS · 150ms)
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  port: 16233
+  server: 102.133.165.160
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 169 (VLESS · 150ms)
+  network: tcp
+  port: 23576
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  server: 51.158.206.93
+  servername: fuck.rkn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 170 (VMESS · 152ms)
+  network: raw
+  port: 443
+  server: 140.238.2.250
+  type: vmess
+  udp: true
+  uuid: 41a7089a-040b-4538-8b8d-010902405bde
+- client-fingerprint: safari
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 171 (VLESS · 152ms)
+  network: tcp
+  port: 8443
+  reality-opts:
+    public-key: Q0dPyF2hFWgxL7hxntJWJammcb6zcRCyA-NOiOFrsAo
+    short-id: 1433a38abea1191c
+  server: 185.14.30.98
+  servername: twitch.tv
+  tls: true
+  type: vless
+  udp: true
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 172 (SS · 153ms)
+  password: aduB9HGxQHjA2SBMRjkHX6
+  port: 443
+  server: 102.37.156.224
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 173 (SS · 153ms)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.90
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 174 (SS · 153ms)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.54
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 175 (VLESS · 153ms)
+  network: tcp
+  port: 23576
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  server: 51.158.206.80
+  servername: fuck.rkn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- client-fingerprint: chrome
+  name: ⚡ [Global] Ultra-Fast 176 (VLESS · 155ms)
+  network: grpc
+  port: 10459
+  reality-opts:
+    public-key: DrVzuibwnFFd6HX9duNcyG65JPMCiUqoJFgxkktishg
+    short-id: af86f23452bf025a
+  server: 83.147.232.69
+  servername: ya.ru
+  tls: true
+  type: vless
+  udp: true
+  uuid: 55ad002b-6cdf-4d76-81bb-91f3f605afc5
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 177 (VLESS · 155ms)
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: dIv6pPS-x6IzbiPyHX8nNdRrwI2yZl4y3YCeRWy9UgE
+    short-id: 3e67326f98ddb407
+  server: 195.123.221.36
+  servername: gateway.icloud.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 9c60369d-e5f9-4cec-9e63-1560e88e119a
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 178 (SS · 155ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.214
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 179 (SS · 155ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.184
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 180 (SS · 156ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.208
+  type: ss
+  udp: true
+- cipher: rc4-md5
+  name: ⚡ [Global] Ultra-Fast 181 (SS · 157ms)
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 146.70.61.37
+  type: ss
+  udp: true
+- client-fingerprint: random
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 182 (VLESS · 157ms)
+  network: tcp
+  port: 23576
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: ''
+  server: 51.158.206.25
+  servername: fuck.rkn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 183 (SS · 157ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 193.29.139.132
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 184 (SS · 158ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.201
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 185 (SS · 158ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.219
+  type: ss
+  udp: true
+- client-fingerprint: random
+  name: ⚡ [Global] Ultra-Fast 186 (VLESS · 159ms)
+  network: tcp
+  port: 2053
+  reality-opts:
+    public-key: 7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk
+    short-id: 29e8dcd2b37aaa7f
+  server: 212.227.235.66
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ead0dd61-d398-40ad-80d6-a0e1e516d7d3
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 187 (SS · 160ms)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.63
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: ⚡ [Global] Ultra-Fast 188 (SS · 160ms)
+  password: shadowsocks
+  port: 443
+  server: 141.98.101.181
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: ⚡ [Global] Ultra-Fast 189 (VMESS · 160ms)
+  network: ws
+  port: 2083
+  server: 104.21.0.1
+  servername: or3.sfacg.uk
+  skip-cert-verify: false
+  tls: true
+  type: vmess
+  udp: true
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 190 (SS · 160ms)
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  port: 8080
+  server: 82.38.31.49
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 191 (SS · 161ms)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 82.110.60.9
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 192 (VLESS · 161ms)
+  network: tcp
+  port: 23576
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  server: 51.158.206.8
+  servername: fuck.rkn
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: ⚡ [Global] Ultra-Fast 193 (VLESS · 161ms)
+  network: tcp
+  port: 41827
+  reality-opts:
+    public-key: cpKcsAG-_0k5q8envXiiOoBzt53gxwVWEqg6uVKMNDk
+    short-id: fba996d8e3568d0d
+  server: 72.56.23.254
+  servername: www.google.nl
+  tls: true
+  type: vless
+  udp: true
+  uuid: e769c1c2-f2b8-4006-bc84-0672c8368578
+- cipher: chacha20-ietf-poly1305
+  name: ⚡ [Global] Ultra-Fast 194 (SS · 161ms)
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 82.38.31.206
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: ⚡ [Global] Ultra-Fast 195 (SS · 161ms)
+  password: itzvpn@321
+  port: 8388
+  server: 57.131.48.45
+  type: ss
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 196 (TROJAN · 161ms)
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 193.108.119.15
+  skip-cert-verify: false
+  sni: courses.iloverussia2026.com
+  type: trojan
+  udp: true
+- name: ⚡ [Global] Ultra-Fast 197 (TROJAN · 164ms)
+  password: humanity
+  port: 443
+  server: 104.27.0.1
+  skip-cert-verify: false
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+proxy-groups:
+- name: ⚡ Auto - Lowest Latency
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 180
+  tolerance: 50
+  proxies: &id001
+  - ⚡ [Global] Ultra-Fast 01 (VLESS · 12ms)
+  - ⚡ [Global] Ultra-Fast 02 (VLESS · 12ms)
+  - ⚡ [Global] Ultra-Fast 03 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 04 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 05 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 06 (TROJAN · 13ms)
+  - ⚡ [Global] Ultra-Fast 07 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 08 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 09 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 10 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 11 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 12 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 13 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 14 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 15 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 16 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 17 (TROJAN · 15ms)
+  - ⚡ [Global] Ultra-Fast 18 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 19 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 20 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 21 (VLESS · 16ms)
+  - ⚡ [Global] Ultra-Fast 22 (VLESS · 17ms)
+  - ⚡ [Global] Ultra-Fast 23 (VMESS · 17ms)
+  - ⚡ [Global] Ultra-Fast 24 (TROJAN · 17ms)
+  - ⚡ [Global] Ultra-Fast 25 (VLESS · 19ms)
+  - ⚡ [US] Ultra-Fast 01 (VLESS · 20ms)
+  - ⚡ [Global] Ultra-Fast 26 (VLESS · 22ms)
+  - ⚡ [Global] Ultra-Fast 27 (VLESS · 23ms)
+  - ⚡ [Global] Ultra-Fast 28 (TROJAN · 23ms)
+  - ⚡ [Global] Ultra-Fast 29 (TROJAN · 23ms)
+  - ⚡ [Global] Ultra-Fast 30 (VLESS · 24ms)
+  - ⚡ [Global] Ultra-Fast 31 (TROJAN · 24ms)
+  - ⚡ [Global] Ultra-Fast 32 (VLESS · 25ms)
+  - ⚡ [Global] Ultra-Fast 33 (VMESS · 25ms)
+  - ⚡ [Global] Ultra-Fast 34 (TROJAN · 25ms)
+  - ⚡ [Global] Ultra-Fast 35 (TROJAN · 26ms)
+  - ⚡ [Global] Ultra-Fast 36 (VLESS · 28ms)
+  - ⚡ [Global] Ultra-Fast 37 (TROJAN · 28ms)
+  - ⚡ [Global] Ultra-Fast 38 (TROJAN · 28ms)
+  - ⚡ [Global] Ultra-Fast 39 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 40 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 41 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 42 (VLESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 43 (VLESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 44 (VMESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 45 (TROJAN · 30ms)
+  - ⚡ [Global] Ultra-Fast 46 (VLESS · 31ms)
+  - ⚡ [Global] Ultra-Fast 47 (TROJAN · 31ms)
+  - ⚡ [Global] Ultra-Fast 48 (TROJAN · 31ms)
+  - ⚡ [Global] Ultra-Fast 49 (VLESS · 33ms)
+  - ⚡ [Global] Ultra-Fast 50 (VLESS · 37ms)
+  - ⚡ [Global] Ultra-Fast 51 (VLESS · 38ms)
+  - ⚡ [Global] Ultra-Fast 52 (TROJAN · 42ms)
+  - ⚡ [Global] Ultra-Fast 53 (TROJAN · 45ms)
+  - ⚡ [Global] Ultra-Fast 54 (VMESS · 46ms)
+  - ⚡ [Global] Ultra-Fast 55 (TROJAN · 46ms)
+  - ⚡ [Global] Ultra-Fast 56 (TROJAN · 46ms)
+  - ⚡ [Global] Ultra-Fast 57 (VLESS · 47ms)
+  - ⚡ [Global] Ultra-Fast 58 (SS · 47ms)
+  - ⚡ [Global] Ultra-Fast 59 (VMESS · 48ms)
+  - ⚡ [Global] Ultra-Fast 60 (VMESS · 48ms)
+  - ⚡ [Global] Ultra-Fast 61 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 62 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 63 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 64 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 65 (SS · 51ms)
+  - ⚡ [Global] Ultra-Fast 66 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 67 (SS · 51ms)
+  - ⚡ [Global] Ultra-Fast 68 (TROJAN · 51ms)
+  - ⚡ [Global] Ultra-Fast 69 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 70 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 71 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 72 (VMESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 73 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 74 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 75 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 76 (VLESS · 53ms)
+  - ⚡ [Global] Ultra-Fast 77 (VLESS · 53ms)
+  - ⚡ [Global] Ultra-Fast 78 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 79 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 80 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 81 (VLESS · 55ms)
+  - ⚡ [Global] Ultra-Fast 82 (VLESS · 56ms)
+  - ⚡ [Global] Ultra-Fast 83 (VLESS · 59ms)
+  - ⚡ [Global] Ultra-Fast 84 (VLESS · 60ms)
+  - ⚡ [Global] Ultra-Fast 85 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 86 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 87 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 88 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 89 (SS · 63ms)
+  - ⚡ [Global] Ultra-Fast 90 (VMESS · 63ms)
+  - ⚡ [Global] Ultra-Fast 91 (VLESS · 67ms)
+  - ⚡ [Global] Ultra-Fast 92 (VLESS · 68ms)
+  - ⚡ [Global] Ultra-Fast 93 (VLESS · 70ms)
+  - ⚡ [Global] Ultra-Fast 94 (VLESS · 71ms)
+  - ⚡ [Global] Ultra-Fast 95 (VLESS · 71ms)
+  - ⚡ [Global] Ultra-Fast 96 (TROJAN · 71ms)
+  - ⚡ [Global] Ultra-Fast 97 (TROJAN · 75ms)
+  - ⚡ [Global] Ultra-Fast 98 (VLESS · 76ms)
+  - ⚡ [Global] Ultra-Fast 99 (VLESS · 76ms)
+  - ⚡ [Global] Ultra-Fast 100 (VLESS · 78ms)
+  - ⚡ [Global] Ultra-Fast 101 (VLESS · 82ms)
+  - ⚡ [Global] Ultra-Fast 102 (VLESS · 82ms)
+  - ⚡ [Global] Ultra-Fast 103 (VLESS · 86ms)
+  - ⚡ [Global] Ultra-Fast 104 (VLESS · 92ms)
+  - ⚡ [Global] Ultra-Fast 105 (VLESS · 92ms)
+  - ⚡ [Global] Ultra-Fast 106 (VLESS · 103ms)
+  - ⚡ [Global] Ultra-Fast 107 (VLESS · 114ms)
+  - ⚡ [Global] Ultra-Fast 108 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 109 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 110 (SS · 115ms)
+  - ⚡ [Global] Ultra-Fast 111 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 112 (VLESS · 116ms)
+  - ⚡ [Global] Ultra-Fast 113 (VLESS · 117ms)
+  - ⚡ [Global] Ultra-Fast 114 (HYSTERIA2 · 117ms)
+  - ⚡ [Global] Ultra-Fast 115 (VLESS · 119ms)
+  - ⚡ [Global] Ultra-Fast 116 (SS · 123ms)
+  - ⚡ [Global] Ultra-Fast 117 (SS · 125ms)
+  - ⚡ [Global] Ultra-Fast 118 (VLESS · 125ms)
+  - ⚡ [Global] Ultra-Fast 119 (VLESS · 128ms)
+  - ⚡ [Global] Ultra-Fast 120 (SS · 129ms)
+  - ⚡ [Global] Ultra-Fast 121 (SS · 129ms)
+  - ⚡ [Global] Ultra-Fast 122 (VLESS · 130ms)
+  - ⚡ [Global] Ultra-Fast 123 (VLESS · 130ms)
+  - ⚡ [Global] Ultra-Fast 124 (TROJAN · 130ms)
+  - ⚡ [Global] Ultra-Fast 125 (SS · 131ms)
+  - ⚡ [Global] Ultra-Fast 126 (VLESS · 131ms)
+  - ⚡ [Global] Ultra-Fast 127 (VMESS · 132ms)
+  - ⚡ [Global] Ultra-Fast 128 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 129 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 130 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 131 (TROJAN · 134ms)
+  - ⚡ [Global] Ultra-Fast 132 (SS · 135ms)
+  - ⚡ [Global] Ultra-Fast 133 (SS · 135ms)
+  - ⚡ [US] Ultra-Fast 02 (VMESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 134 (VLESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 135 (VMESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 136 (TROJAN · 135ms)
+  - ⚡ [Global] Ultra-Fast 137 (SS · 136ms)
+  - ⚡ [Global] Ultra-Fast 138 (SS · 136ms)
+  - ⚡ [Global] Ultra-Fast 139 (SS · 137ms)
+  - ⚡ [Global] Ultra-Fast 140 (SS · 137ms)
+  - ⚡ [Global] Ultra-Fast 141 (VLESS · 137ms)
+  - ⚡ [Global] Ultra-Fast 142 (VLESS · 137ms)
+  - ⚡ [Global] Ultra-Fast 143 (SS · 138ms)
+  - ⚡ [Global] Ultra-Fast 144 (VLESS · 138ms)
+  - ⚡ [US] Ultra-Fast 03 (VLESS · 138ms)
+  - ⚡ [Global] Ultra-Fast 145 (SS · 140ms)
+  - ⚡ [Global] Ultra-Fast 146 (VLESS · 141ms)
+  - ⚡ [Global] Ultra-Fast 147 (SS · 141ms)
+  - ⚡ [Global] Ultra-Fast 148 (SS · 142ms)
+  - ⚡ [Global] Ultra-Fast 149 (VLESS · 142ms)
+  - ⚡ [Global] Ultra-Fast 150 (VLESS · 143ms)
+  - ⚡ [Global] Ultra-Fast 151 (SS · 144ms)
+  - ⚡ [Global] Ultra-Fast 152 (SS · 144ms)
+  - ⚡ [Global] Ultra-Fast 153 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 154 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 155 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 156 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 157 (SS · 145ms)
+  - ⚡ [Global] Ultra-Fast 158 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 159 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 160 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 161 (SS · 146ms)
+  - ⚡ [Global] Ultra-Fast 162 (SS · 146ms)
+  - ⚡ [Global] Ultra-Fast 163 (VLESS · 147ms)
+  - ⚡ [Global] Ultra-Fast 164 (VMESS · 147ms)
+  - ⚡ [Global] Ultra-Fast 165 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 166 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 167 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 168 (SS · 150ms)
+  - ⚡ [Global] Ultra-Fast 169 (VLESS · 150ms)
+  - ⚡ [Global] Ultra-Fast 170 (VMESS · 152ms)
+  - ⚡ [Global] Ultra-Fast 171 (VLESS · 152ms)
+  - ⚡ [Global] Ultra-Fast 172 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 173 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 174 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 175 (VLESS · 153ms)
+  - ⚡ [Global] Ultra-Fast 176 (VLESS · 155ms)
+  - ⚡ [Global] Ultra-Fast 177 (VLESS · 155ms)
+  - ⚡ [Global] Ultra-Fast 178 (SS · 155ms)
+  - ⚡ [Global] Ultra-Fast 179 (SS · 155ms)
+  - ⚡ [Global] Ultra-Fast 180 (SS · 156ms)
+  - ⚡ [Global] Ultra-Fast 181 (SS · 157ms)
+  - ⚡ [Global] Ultra-Fast 182 (VLESS · 157ms)
+  - ⚡ [Global] Ultra-Fast 183 (SS · 157ms)
+  - ⚡ [Global] Ultra-Fast 184 (SS · 158ms)
+  - ⚡ [Global] Ultra-Fast 185 (SS · 158ms)
+  - ⚡ [Global] Ultra-Fast 186 (VLESS · 159ms)
+  - ⚡ [Global] Ultra-Fast 187 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 188 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 189 (VMESS · 160ms)
+  - ⚡ [Global] Ultra-Fast 190 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 191 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 192 (VLESS · 161ms)
+  - ⚡ [Global] Ultra-Fast 193 (VLESS · 161ms)
+  - ⚡ [Global] Ultra-Fast 194 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 195 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 196 (TROJAN · 161ms)
+  - ⚡ [Global] Ultra-Fast 197 (TROJAN · 164ms)
+- name: 🚀 Fast Select
+  type: select
+  proxies:
+  - ⚡ Auto - Lowest Latency
+  - ⚡ [Global] Ultra-Fast 01 (VLESS · 12ms)
+  - ⚡ [Global] Ultra-Fast 02 (VLESS · 12ms)
+  - ⚡ [Global] Ultra-Fast 03 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 04 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 05 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 06 (TROJAN · 13ms)
+  - ⚡ [Global] Ultra-Fast 07 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 08 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 09 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 10 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 11 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 12 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 13 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 14 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 15 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 16 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 17 (TROJAN · 15ms)
+  - ⚡ [Global] Ultra-Fast 18 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 19 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 20 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 21 (VLESS · 16ms)
+  - ⚡ [Global] Ultra-Fast 22 (VLESS · 17ms)
+  - ⚡ [Global] Ultra-Fast 23 (VMESS · 17ms)
+  - ⚡ [Global] Ultra-Fast 24 (TROJAN · 17ms)
+  - ⚡ [Global] Ultra-Fast 25 (VLESS · 19ms)
+  - ⚡ [US] Ultra-Fast 01 (VLESS · 20ms)
+  - ⚡ [Global] Ultra-Fast 26 (VLESS · 22ms)
+  - ⚡ [Global] Ultra-Fast 27 (VLESS · 23ms)
+  - ⚡ [Global] Ultra-Fast 28 (TROJAN · 23ms)
+  - ⚡ [Global] Ultra-Fast 29 (TROJAN · 23ms)
+  - ⚡ [Global] Ultra-Fast 30 (VLESS · 24ms)
+  - ⚡ [Global] Ultra-Fast 31 (TROJAN · 24ms)
+  - ⚡ [Global] Ultra-Fast 32 (VLESS · 25ms)
+  - ⚡ [Global] Ultra-Fast 33 (VMESS · 25ms)
+  - ⚡ [Global] Ultra-Fast 34 (TROJAN · 25ms)
+  - ⚡ [Global] Ultra-Fast 35 (TROJAN · 26ms)
+  - ⚡ [Global] Ultra-Fast 36 (VLESS · 28ms)
+  - ⚡ [Global] Ultra-Fast 37 (TROJAN · 28ms)
+  - ⚡ [Global] Ultra-Fast 38 (TROJAN · 28ms)
+  - ⚡ [Global] Ultra-Fast 39 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 40 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 41 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 42 (VLESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 43 (VLESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 44 (VMESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 45 (TROJAN · 30ms)
+  - ⚡ [Global] Ultra-Fast 46 (VLESS · 31ms)
+  - ⚡ [Global] Ultra-Fast 47 (TROJAN · 31ms)
+  - ⚡ [Global] Ultra-Fast 48 (TROJAN · 31ms)
+  - ⚡ [Global] Ultra-Fast 49 (VLESS · 33ms)
+  - ⚡ [Global] Ultra-Fast 50 (VLESS · 37ms)
+  - ⚡ [Global] Ultra-Fast 51 (VLESS · 38ms)
+  - ⚡ [Global] Ultra-Fast 52 (TROJAN · 42ms)
+  - ⚡ [Global] Ultra-Fast 53 (TROJAN · 45ms)
+  - ⚡ [Global] Ultra-Fast 54 (VMESS · 46ms)
+  - ⚡ [Global] Ultra-Fast 55 (TROJAN · 46ms)
+  - ⚡ [Global] Ultra-Fast 56 (TROJAN · 46ms)
+  - ⚡ [Global] Ultra-Fast 57 (VLESS · 47ms)
+  - ⚡ [Global] Ultra-Fast 58 (SS · 47ms)
+  - ⚡ [Global] Ultra-Fast 59 (VMESS · 48ms)
+  - ⚡ [Global] Ultra-Fast 60 (VMESS · 48ms)
+  - ⚡ [Global] Ultra-Fast 61 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 62 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 63 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 64 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 65 (SS · 51ms)
+  - ⚡ [Global] Ultra-Fast 66 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 67 (SS · 51ms)
+  - ⚡ [Global] Ultra-Fast 68 (TROJAN · 51ms)
+  - ⚡ [Global] Ultra-Fast 69 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 70 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 71 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 72 (VMESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 73 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 74 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 75 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 76 (VLESS · 53ms)
+  - ⚡ [Global] Ultra-Fast 77 (VLESS · 53ms)
+  - ⚡ [Global] Ultra-Fast 78 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 79 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 80 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 81 (VLESS · 55ms)
+  - ⚡ [Global] Ultra-Fast 82 (VLESS · 56ms)
+  - ⚡ [Global] Ultra-Fast 83 (VLESS · 59ms)
+  - ⚡ [Global] Ultra-Fast 84 (VLESS · 60ms)
+  - ⚡ [Global] Ultra-Fast 85 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 86 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 87 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 88 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 89 (SS · 63ms)
+  - ⚡ [Global] Ultra-Fast 90 (VMESS · 63ms)
+  - ⚡ [Global] Ultra-Fast 91 (VLESS · 67ms)
+  - ⚡ [Global] Ultra-Fast 92 (VLESS · 68ms)
+  - ⚡ [Global] Ultra-Fast 93 (VLESS · 70ms)
+  - ⚡ [Global] Ultra-Fast 94 (VLESS · 71ms)
+  - ⚡ [Global] Ultra-Fast 95 (VLESS · 71ms)
+  - ⚡ [Global] Ultra-Fast 96 (TROJAN · 71ms)
+  - ⚡ [Global] Ultra-Fast 97 (TROJAN · 75ms)
+  - ⚡ [Global] Ultra-Fast 98 (VLESS · 76ms)
+  - ⚡ [Global] Ultra-Fast 99 (VLESS · 76ms)
+  - ⚡ [Global] Ultra-Fast 100 (VLESS · 78ms)
+  - ⚡ [Global] Ultra-Fast 101 (VLESS · 82ms)
+  - ⚡ [Global] Ultra-Fast 102 (VLESS · 82ms)
+  - ⚡ [Global] Ultra-Fast 103 (VLESS · 86ms)
+  - ⚡ [Global] Ultra-Fast 104 (VLESS · 92ms)
+  - ⚡ [Global] Ultra-Fast 105 (VLESS · 92ms)
+  - ⚡ [Global] Ultra-Fast 106 (VLESS · 103ms)
+  - ⚡ [Global] Ultra-Fast 107 (VLESS · 114ms)
+  - ⚡ [Global] Ultra-Fast 108 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 109 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 110 (SS · 115ms)
+  - ⚡ [Global] Ultra-Fast 111 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 112 (VLESS · 116ms)
+  - ⚡ [Global] Ultra-Fast 113 (VLESS · 117ms)
+  - ⚡ [Global] Ultra-Fast 114 (HYSTERIA2 · 117ms)
+  - ⚡ [Global] Ultra-Fast 115 (VLESS · 119ms)
+  - ⚡ [Global] Ultra-Fast 116 (SS · 123ms)
+  - ⚡ [Global] Ultra-Fast 117 (SS · 125ms)
+  - ⚡ [Global] Ultra-Fast 118 (VLESS · 125ms)
+  - ⚡ [Global] Ultra-Fast 119 (VLESS · 128ms)
+  - ⚡ [Global] Ultra-Fast 120 (SS · 129ms)
+  - ⚡ [Global] Ultra-Fast 121 (SS · 129ms)
+  - ⚡ [Global] Ultra-Fast 122 (VLESS · 130ms)
+  - ⚡ [Global] Ultra-Fast 123 (VLESS · 130ms)
+  - ⚡ [Global] Ultra-Fast 124 (TROJAN · 130ms)
+  - ⚡ [Global] Ultra-Fast 125 (SS · 131ms)
+  - ⚡ [Global] Ultra-Fast 126 (VLESS · 131ms)
+  - ⚡ [Global] Ultra-Fast 127 (VMESS · 132ms)
+  - ⚡ [Global] Ultra-Fast 128 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 129 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 130 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 131 (TROJAN · 134ms)
+  - ⚡ [Global] Ultra-Fast 132 (SS · 135ms)
+  - ⚡ [Global] Ultra-Fast 133 (SS · 135ms)
+  - ⚡ [US] Ultra-Fast 02 (VMESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 134 (VLESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 135 (VMESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 136 (TROJAN · 135ms)
+  - ⚡ [Global] Ultra-Fast 137 (SS · 136ms)
+  - ⚡ [Global] Ultra-Fast 138 (SS · 136ms)
+  - ⚡ [Global] Ultra-Fast 139 (SS · 137ms)
+  - ⚡ [Global] Ultra-Fast 140 (SS · 137ms)
+  - ⚡ [Global] Ultra-Fast 141 (VLESS · 137ms)
+  - ⚡ [Global] Ultra-Fast 142 (VLESS · 137ms)
+  - ⚡ [Global] Ultra-Fast 143 (SS · 138ms)
+  - ⚡ [Global] Ultra-Fast 144 (VLESS · 138ms)
+  - ⚡ [US] Ultra-Fast 03 (VLESS · 138ms)
+  - ⚡ [Global] Ultra-Fast 145 (SS · 140ms)
+  - ⚡ [Global] Ultra-Fast 146 (VLESS · 141ms)
+  - ⚡ [Global] Ultra-Fast 147 (SS · 141ms)
+  - ⚡ [Global] Ultra-Fast 148 (SS · 142ms)
+  - ⚡ [Global] Ultra-Fast 149 (VLESS · 142ms)
+  - ⚡ [Global] Ultra-Fast 150 (VLESS · 143ms)
+  - ⚡ [Global] Ultra-Fast 151 (SS · 144ms)
+  - ⚡ [Global] Ultra-Fast 152 (SS · 144ms)
+  - ⚡ [Global] Ultra-Fast 153 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 154 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 155 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 156 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 157 (SS · 145ms)
+  - ⚡ [Global] Ultra-Fast 158 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 159 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 160 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 161 (SS · 146ms)
+  - ⚡ [Global] Ultra-Fast 162 (SS · 146ms)
+  - ⚡ [Global] Ultra-Fast 163 (VLESS · 147ms)
+  - ⚡ [Global] Ultra-Fast 164 (VMESS · 147ms)
+  - ⚡ [Global] Ultra-Fast 165 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 166 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 167 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 168 (SS · 150ms)
+  - ⚡ [Global] Ultra-Fast 169 (VLESS · 150ms)
+  - ⚡ [Global] Ultra-Fast 170 (VMESS · 152ms)
+  - ⚡ [Global] Ultra-Fast 171 (VLESS · 152ms)
+  - ⚡ [Global] Ultra-Fast 172 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 173 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 174 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 175 (VLESS · 153ms)
+  - ⚡ [Global] Ultra-Fast 176 (VLESS · 155ms)
+  - ⚡ [Global] Ultra-Fast 177 (VLESS · 155ms)
+  - ⚡ [Global] Ultra-Fast 178 (SS · 155ms)
+  - ⚡ [Global] Ultra-Fast 179 (SS · 155ms)
+  - ⚡ [Global] Ultra-Fast 180 (SS · 156ms)
+  - ⚡ [Global] Ultra-Fast 181 (SS · 157ms)
+  - ⚡ [Global] Ultra-Fast 182 (VLESS · 157ms)
+  - ⚡ [Global] Ultra-Fast 183 (SS · 157ms)
+  - ⚡ [Global] Ultra-Fast 184 (SS · 158ms)
+  - ⚡ [Global] Ultra-Fast 185 (SS · 158ms)
+  - ⚡ [Global] Ultra-Fast 186 (VLESS · 159ms)
+  - ⚡ [Global] Ultra-Fast 187 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 188 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 189 (VMESS · 160ms)
+  - ⚡ [Global] Ultra-Fast 190 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 191 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 192 (VLESS · 161ms)
+  - ⚡ [Global] Ultra-Fast 193 (VLESS · 161ms)
+  - ⚡ [Global] Ultra-Fast 194 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 195 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 196 (TROJAN · 161ms)
+  - ⚡ [Global] Ultra-Fast 197 (TROJAN · 164ms)
+- name: 🛡️ High-Security Fallback
+  type: fallback
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies: *id001
+- name: GLOBAL
+  type: select
+  proxies:
+  - 🚀 Fast Select
+  - ⚡ Auto - Lowest Latency
+  - DIRECT
+  - ⚡ [Global] Ultra-Fast 01 (VLESS · 12ms)
+  - ⚡ [Global] Ultra-Fast 02 (VLESS · 12ms)
+  - ⚡ [Global] Ultra-Fast 03 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 04 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 05 (VLESS · 13ms)
+  - ⚡ [Global] Ultra-Fast 06 (TROJAN · 13ms)
+  - ⚡ [Global] Ultra-Fast 07 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 08 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 09 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 10 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 11 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 12 (VLESS · 14ms)
+  - ⚡ [Global] Ultra-Fast 13 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 14 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 15 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 16 (VLESS · 15ms)
+  - ⚡ [Global] Ultra-Fast 17 (TROJAN · 15ms)
+  - ⚡ [Global] Ultra-Fast 18 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 19 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 20 (TROJAN · 16ms)
+  - ⚡ [Global] Ultra-Fast 21 (VLESS · 16ms)
+  - ⚡ [Global] Ultra-Fast 22 (VLESS · 17ms)
+  - ⚡ [Global] Ultra-Fast 23 (VMESS · 17ms)
+  - ⚡ [Global] Ultra-Fast 24 (TROJAN · 17ms)
+  - ⚡ [Global] Ultra-Fast 25 (VLESS · 19ms)
+  - ⚡ [US] Ultra-Fast 01 (VLESS · 20ms)
+  - ⚡ [Global] Ultra-Fast 26 (VLESS · 22ms)
+  - ⚡ [Global] Ultra-Fast 27 (VLESS · 23ms)
+  - ⚡ [Global] Ultra-Fast 28 (TROJAN · 23ms)
+  - ⚡ [Global] Ultra-Fast 29 (TROJAN · 23ms)
+  - ⚡ [Global] Ultra-Fast 30 (VLESS · 24ms)
+  - ⚡ [Global] Ultra-Fast 31 (TROJAN · 24ms)
+  - ⚡ [Global] Ultra-Fast 32 (VLESS · 25ms)
+  - ⚡ [Global] Ultra-Fast 33 (VMESS · 25ms)
+  - ⚡ [Global] Ultra-Fast 34 (TROJAN · 25ms)
+  - ⚡ [Global] Ultra-Fast 35 (TROJAN · 26ms)
+  - ⚡ [Global] Ultra-Fast 36 (VLESS · 28ms)
+  - ⚡ [Global] Ultra-Fast 37 (TROJAN · 28ms)
+  - ⚡ [Global] Ultra-Fast 38 (TROJAN · 28ms)
+  - ⚡ [Global] Ultra-Fast 39 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 40 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 41 (VLESS · 29ms)
+  - ⚡ [Global] Ultra-Fast 42 (VLESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 43 (VLESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 44 (VMESS · 30ms)
+  - ⚡ [Global] Ultra-Fast 45 (TROJAN · 30ms)
+  - ⚡ [Global] Ultra-Fast 46 (VLESS · 31ms)
+  - ⚡ [Global] Ultra-Fast 47 (TROJAN · 31ms)
+  - ⚡ [Global] Ultra-Fast 48 (TROJAN · 31ms)
+  - ⚡ [Global] Ultra-Fast 49 (VLESS · 33ms)
+  - ⚡ [Global] Ultra-Fast 50 (VLESS · 37ms)
+  - ⚡ [Global] Ultra-Fast 51 (VLESS · 38ms)
+  - ⚡ [Global] Ultra-Fast 52 (TROJAN · 42ms)
+  - ⚡ [Global] Ultra-Fast 53 (TROJAN · 45ms)
+  - ⚡ [Global] Ultra-Fast 54 (VMESS · 46ms)
+  - ⚡ [Global] Ultra-Fast 55 (TROJAN · 46ms)
+  - ⚡ [Global] Ultra-Fast 56 (TROJAN · 46ms)
+  - ⚡ [Global] Ultra-Fast 57 (VLESS · 47ms)
+  - ⚡ [Global] Ultra-Fast 58 (SS · 47ms)
+  - ⚡ [Global] Ultra-Fast 59 (VMESS · 48ms)
+  - ⚡ [Global] Ultra-Fast 60 (VMESS · 48ms)
+  - ⚡ [Global] Ultra-Fast 61 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 62 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 63 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 64 (VLESS · 50ms)
+  - ⚡ [Global] Ultra-Fast 65 (SS · 51ms)
+  - ⚡ [Global] Ultra-Fast 66 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 67 (SS · 51ms)
+  - ⚡ [Global] Ultra-Fast 68 (TROJAN · 51ms)
+  - ⚡ [Global] Ultra-Fast 69 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 70 (VLESS · 51ms)
+  - ⚡ [Global] Ultra-Fast 71 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 72 (VMESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 73 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 74 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 75 (VLESS · 52ms)
+  - ⚡ [Global] Ultra-Fast 76 (VLESS · 53ms)
+  - ⚡ [Global] Ultra-Fast 77 (VLESS · 53ms)
+  - ⚡ [Global] Ultra-Fast 78 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 79 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 80 (VLESS · 54ms)
+  - ⚡ [Global] Ultra-Fast 81 (VLESS · 55ms)
+  - ⚡ [Global] Ultra-Fast 82 (VLESS · 56ms)
+  - ⚡ [Global] Ultra-Fast 83 (VLESS · 59ms)
+  - ⚡ [Global] Ultra-Fast 84 (VLESS · 60ms)
+  - ⚡ [Global] Ultra-Fast 85 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 86 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 87 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 88 (VLESS · 61ms)
+  - ⚡ [Global] Ultra-Fast 89 (SS · 63ms)
+  - ⚡ [Global] Ultra-Fast 90 (VMESS · 63ms)
+  - ⚡ [Global] Ultra-Fast 91 (VLESS · 67ms)
+  - ⚡ [Global] Ultra-Fast 92 (VLESS · 68ms)
+  - ⚡ [Global] Ultra-Fast 93 (VLESS · 70ms)
+  - ⚡ [Global] Ultra-Fast 94 (VLESS · 71ms)
+  - ⚡ [Global] Ultra-Fast 95 (VLESS · 71ms)
+  - ⚡ [Global] Ultra-Fast 96 (TROJAN · 71ms)
+  - ⚡ [Global] Ultra-Fast 97 (TROJAN · 75ms)
+  - ⚡ [Global] Ultra-Fast 98 (VLESS · 76ms)
+  - ⚡ [Global] Ultra-Fast 99 (VLESS · 76ms)
+  - ⚡ [Global] Ultra-Fast 100 (VLESS · 78ms)
+  - ⚡ [Global] Ultra-Fast 101 (VLESS · 82ms)
+  - ⚡ [Global] Ultra-Fast 102 (VLESS · 82ms)
+  - ⚡ [Global] Ultra-Fast 103 (VLESS · 86ms)
+  - ⚡ [Global] Ultra-Fast 104 (VLESS · 92ms)
+  - ⚡ [Global] Ultra-Fast 105 (VLESS · 92ms)
+  - ⚡ [Global] Ultra-Fast 106 (VLESS · 103ms)
+  - ⚡ [Global] Ultra-Fast 107 (VLESS · 114ms)
+  - ⚡ [Global] Ultra-Fast 108 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 109 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 110 (SS · 115ms)
+  - ⚡ [Global] Ultra-Fast 111 (VLESS · 115ms)
+  - ⚡ [Global] Ultra-Fast 112 (VLESS · 116ms)
+  - ⚡ [Global] Ultra-Fast 113 (VLESS · 117ms)
+  - ⚡ [Global] Ultra-Fast 114 (HYSTERIA2 · 117ms)
+  - ⚡ [Global] Ultra-Fast 115 (VLESS · 119ms)
+  - ⚡ [Global] Ultra-Fast 116 (SS · 123ms)
+  - ⚡ [Global] Ultra-Fast 117 (SS · 125ms)
+  - ⚡ [Global] Ultra-Fast 118 (VLESS · 125ms)
+  - ⚡ [Global] Ultra-Fast 119 (VLESS · 128ms)
+  - ⚡ [Global] Ultra-Fast 120 (SS · 129ms)
+  - ⚡ [Global] Ultra-Fast 121 (SS · 129ms)
+  - ⚡ [Global] Ultra-Fast 122 (VLESS · 130ms)
+  - ⚡ [Global] Ultra-Fast 123 (VLESS · 130ms)
+  - ⚡ [Global] Ultra-Fast 124 (TROJAN · 130ms)
+  - ⚡ [Global] Ultra-Fast 125 (SS · 131ms)
+  - ⚡ [Global] Ultra-Fast 126 (VLESS · 131ms)
+  - ⚡ [Global] Ultra-Fast 127 (VMESS · 132ms)
+  - ⚡ [Global] Ultra-Fast 128 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 129 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 130 (VLESS · 134ms)
+  - ⚡ [Global] Ultra-Fast 131 (TROJAN · 134ms)
+  - ⚡ [Global] Ultra-Fast 132 (SS · 135ms)
+  - ⚡ [Global] Ultra-Fast 133 (SS · 135ms)
+  - ⚡ [US] Ultra-Fast 02 (VMESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 134 (VLESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 135 (VMESS · 135ms)
+  - ⚡ [Global] Ultra-Fast 136 (TROJAN · 135ms)
+  - ⚡ [Global] Ultra-Fast 137 (SS · 136ms)
+  - ⚡ [Global] Ultra-Fast 138 (SS · 136ms)
+  - ⚡ [Global] Ultra-Fast 139 (SS · 137ms)
+  - ⚡ [Global] Ultra-Fast 140 (SS · 137ms)
+  - ⚡ [Global] Ultra-Fast 141 (VLESS · 137ms)
+  - ⚡ [Global] Ultra-Fast 142 (VLESS · 137ms)
+  - ⚡ [Global] Ultra-Fast 143 (SS · 138ms)
+  - ⚡ [Global] Ultra-Fast 144 (VLESS · 138ms)
+  - ⚡ [US] Ultra-Fast 03 (VLESS · 138ms)
+  - ⚡ [Global] Ultra-Fast 145 (SS · 140ms)
+  - ⚡ [Global] Ultra-Fast 146 (VLESS · 141ms)
+  - ⚡ [Global] Ultra-Fast 147 (SS · 141ms)
+  - ⚡ [Global] Ultra-Fast 148 (SS · 142ms)
+  - ⚡ [Global] Ultra-Fast 149 (VLESS · 142ms)
+  - ⚡ [Global] Ultra-Fast 150 (VLESS · 143ms)
+  - ⚡ [Global] Ultra-Fast 151 (SS · 144ms)
+  - ⚡ [Global] Ultra-Fast 152 (SS · 144ms)
+  - ⚡ [Global] Ultra-Fast 153 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 154 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 155 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 156 (VLESS · 144ms)
+  - ⚡ [Global] Ultra-Fast 157 (SS · 145ms)
+  - ⚡ [Global] Ultra-Fast 158 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 159 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 160 (VLESS · 145ms)
+  - ⚡ [Global] Ultra-Fast 161 (SS · 146ms)
+  - ⚡ [Global] Ultra-Fast 162 (SS · 146ms)
+  - ⚡ [Global] Ultra-Fast 163 (VLESS · 147ms)
+  - ⚡ [Global] Ultra-Fast 164 (VMESS · 147ms)
+  - ⚡ [Global] Ultra-Fast 165 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 166 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 167 (SS · 148ms)
+  - ⚡ [Global] Ultra-Fast 168 (SS · 150ms)
+  - ⚡ [Global] Ultra-Fast 169 (VLESS · 150ms)
+  - ⚡ [Global] Ultra-Fast 170 (VMESS · 152ms)
+  - ⚡ [Global] Ultra-Fast 171 (VLESS · 152ms)
+  - ⚡ [Global] Ultra-Fast 172 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 173 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 174 (SS · 153ms)
+  - ⚡ [Global] Ultra-Fast 175 (VLESS · 153ms)
+  - ⚡ [Global] Ultra-Fast 176 (VLESS · 155ms)
+  - ⚡ [Global] Ultra-Fast 177 (VLESS · 155ms)
+  - ⚡ [Global] Ultra-Fast 178 (SS · 155ms)
+  - ⚡ [Global] Ultra-Fast 179 (SS · 155ms)
+  - ⚡ [Global] Ultra-Fast 180 (SS · 156ms)
+  - ⚡ [Global] Ultra-Fast 181 (SS · 157ms)
+  - ⚡ [Global] Ultra-Fast 182 (VLESS · 157ms)
+  - ⚡ [Global] Ultra-Fast 183 (SS · 157ms)
+  - ⚡ [Global] Ultra-Fast 184 (SS · 158ms)
+  - ⚡ [Global] Ultra-Fast 185 (SS · 158ms)
+  - ⚡ [Global] Ultra-Fast 186 (VLESS · 159ms)
+  - ⚡ [Global] Ultra-Fast 187 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 188 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 189 (VMESS · 160ms)
+  - ⚡ [Global] Ultra-Fast 190 (SS · 160ms)
+  - ⚡ [Global] Ultra-Fast 191 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 192 (VLESS · 161ms)
+  - ⚡ [Global] Ultra-Fast 193 (VLESS · 161ms)
+  - ⚡ [Global] Ultra-Fast 194 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 195 (SS · 161ms)
+  - ⚡ [Global] Ultra-Fast 196 (TROJAN · 161ms)
+  - ⚡ [Global] Ultra-Fast 197 (TROJAN · 164ms)
+rules:
+- DOMAIN-SUFFIX,doubleclick.net,🛑 Ad-Block and Telemetry Drop
+- DOMAIN-SUFFIX,google-analytics.com,🛑 Ad-Block and Telemetry Drop
+- DOMAIN-SUFFIX,googlesyndication.com,🛑 Ad-Block and Telemetry Drop
+- DOMAIN-SUFFIX,amazon-adsystem.com,🛑 Ad-Block and Telemetry Drop
+- DOMAIN-KEYWORD,telemetry,🛑 Ad-Block and Telemetry Drop
+- DOMAIN-KEYWORD,analytics,🛑 Ad-Block and Telemetry Drop
+- DOMAIN-SUFFIX,primevideo.com,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,amazon.com,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,aiv-cdn.net,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,media-amazon.com,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,netflix.com,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,nflxvideo.net,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,nflximg.net,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,hulu.com,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,tubitv.com,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,pluto.tv,🇺🇸 US Streaming
+- DOMAIN-SUFFIX,bbc.co.uk,🇬🇧 UK Streaming
+- DOMAIN-SUFFIX,bbci.co.uk,🇬🇧 UK Streaming
+- DOMAIN-SUFFIX,itv.com,🇬🇧 UK Streaming
+- DOMAIN-SUFFIX,channel4.com,🇬🇧 UK Streaming
+- DOMAIN-SUFFIX,abema.tv,🇯🇵 Japan Anime
+- DOMAIN-SUFFIX,tver.jp,🇯🇵 Japan Anime
+- GEOIP,IN,DIRECT
+- DOMAIN-SUFFIX,in,DIRECT
+- DOMAIN-SUFFIX,gov.in,DIRECT
+- DOMAIN-KEYWORD,sbi,DIRECT
+- DOMAIN-KEYWORD,hdfc,DIRECT
+- DOMAIN-KEYWORD,icici,DIRECT
+- DOMAIN-KEYWORD,axisbank,DIRECT
+- DOMAIN-KEYWORD,irctc,DIRECT
+- DOMAIN-KEYWORD,jio,DIRECT
+- DOMAIN-KEYWORD,airtel,DIRECT
+- MATCH,🛡️ HidingJackson Core
