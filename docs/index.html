@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HidingJackson — High-Performance Kernel Proxy & Privacy Shield</title>
+  <meta name="description" content="Official website for HidingJackson. Built by Sai Vardhan Reddy (BSVR Technologies). High-performance proxy client with native TUN mode, 100% zero-error verified nodes, and Windows Authenticode certification.">
+  <link rel="icon" href="https://raw.githubusercontent.com/SVR1339/HidingJackson/main/src-tauri/icons/icon.ico">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              900: '#164e63',
+            },
+            surface: {
+              800: '#131b2e',
+              900: '#0a0f1d',
+              950: '#05070f',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #05070f;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+    }
+    .glass {
+      background: rgba(19, 27, 46, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(34, 211, 238, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.2);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.5);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .pulse-dot {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black min-h-screen flex flex-col relative overflow-x-hidden">
+
+  <!-- Background Animated Canvas -->
+  <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-25"></canvas>
+
+  <!-- Ambient Glow Gradients -->
+  <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+  <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[160px] pointer-events-none"></div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo & Title -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center p-0.5 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-surface-950 rounded-[10px] flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400"></i>
+          </div>
+        </div>
+        <div>
+          <div class="font-bold text-xl tracking-tight text-white flex items-center gap-2">
+            HidingJackson
+            <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">v1.1.0</span>
+          </div>
+          <div class="text-[11px] text-slate-400 font-medium">BSVR Technologies · Sai Vardhan Reddy</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-cyan-400 transition-colors">Features</a>
+        <a href="#fleet" class="hover:text-cyan-400 transition-colors">Zero-Error Fleet</a>
+        <a href="#security" class="hover:text-cyan-400 transition-colors">Authenticode Trust</a>
+        <a href="#quickstart" class="hover:text-cyan-400 transition-colors">Quickstart</a>
+        <a href="https://www.bsvr.work/" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+          <i data-lucide="globe" class="w-4 h-4 text-cyan-400"></i>
+          <span>BSVR Work</span>
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/SVR1339/HidingJackson" target="_blank" rel="noopener" class="p-2.5 rounded-xl glass hover:border-cyan-500/30 text-slate-300 hover:text-white transition-all flex items-center gap-2 text-sm font-medium">
+          <i data-lucide="github" class="w-5 h-5"></i>
+          <span class="hidden sm:inline">SVR1339</span>
+        </a>
+        <a href="#download" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Download</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="relative z-10 flex-grow">
+    <section class="pt-20 pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+      
+      <!-- Top Announcement Pill -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass border border-cyan-500/30 text-xs font-medium text-cyan-300 mb-8 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+        <span>Windows Authenticode Certified (10-Year Extended Trust)</span>
+        <span class="text-slate-500">·</span>
+        <span class="text-slate-400">Zero-Error Active Fleet</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+        Next-Generation <br class="hidden sm:inline" />
+        <span class="gradient-text">High-Performance Proxy</span> & Privacy Shield
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl text-slate-400 font-normal leading-relaxed mb-10">
+        Engineered by <strong class="text-white font-semibold">Sai Vardhan Reddy</strong> at <strong class="text-white font-semibold">BSVR Technologies</strong>.
+        Features kernel-level TUN virtual adapter routing, sub-50ms intelligent failover,
+        and 100% verified zero-error proxy endpoints with built-in digital signatures.
+      </p>
+
+      <!-- Primary Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a id="download-btn" href="https://github.com/SVR1339/HidingJackson/releases/download/v1.1.0/HidingJackson-v1.1.0-Setup.exe" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-bold text-base shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+          <i data-lucide="download" class="w-5 h-5"></i>
+          <span>Download HidingJackson v1.1.0</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-white/20 font-mono font-normal">Windows x64 · 43MB</span>
+        </a>
+        <a href="https://github.com/SVR1339/HidingJackson" target="_blank" rel="noopener" class="w-full sm:w-auto px-7 py-4 rounded-xl glass hover:border-slate-500 text-white font-semibold text-base transition-all flex items-center justify-center gap-2.5">
+          <i data-lucide="github" class="w-5 h-5"></i>
+          <span>View Source on GitHub</span>
+        </a>
+      </div>
+
+      <!-- Verified Trust Badges Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+        <div class="glass p-4 rounded-2xl flex items-center gap-3 border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs font-semibold text-white">Authenticode Signed</div>
+            <div class="text-[11px] text-slate-400 font-mono">10-Year Valid SHA-256</div>
+          </div>
+        </div>
+
+        <div class="glass p-4 rounded-2xl flex items-center gap-3 border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs font-semibold text-white">Zero-Error Nodes</div>
+            <div class="text-[11px] text-slate-400">100% Live Socket Verified</div>
+          </div>
+        </div>
+
+        <div class="glass p-4 rounded-2xl flex items-center gap-3 border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs font-semibold text-white">Kernel TUN Mode</div>
+            <div class="text-[11px] text-slate-400">Direct Virtual Adapter</div>
+          </div>
+        </div>
+
+        <div class="glass p-4 rounded-2xl flex items-center gap-3 border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xs font-semibold text-white">Absolute Privacy</div>
+            <div class="text-[11px] text-slate-400">No Telemetry / Offline Rules</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Zero-Error Fleet Live Visualizer -->
+    <section id="fleet" class="py-20 bg-surface-900/60 border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">High Availability Fleet</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Zero Dead Proxies. 100% Green Latencies.</h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Unlike legacy applications flooded with dead endpoints reporting red <span class="text-red-400 font-mono">Error</span>,
+            HidingJackson features continuous socket health probing that filters out dead servers and routes exclusively through verified responsive nodes.
+          </p>
+        </div>
+
+        <!-- Live Node Cards Table -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8" id="node-grid">
+          <!-- Dynamically populated or pre-rendered cards -->
+          <div class="glass-card p-4 rounded-2xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-white">⚡ [US] Ultra-Fast 01</div>
+                <div class="text-xs text-slate-400 font-mono">VLESS · UDP · TCP BBR</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 30ms
+              </span>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-white">⚡ [Global] Cloudflare Edge</div>
+                <div class="text-xs text-slate-400 font-mono">VLESS · TLS · CDN Direct</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 30ms
+              </span>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-white">⚡ [SG] Singapore Edge</div>
+                <div class="text-xs text-slate-400 font-mono">VMess · WS · FastRoute</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 46ms
+              </span>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-white">⚡ [DE] Frankfurt High-Speed</div>
+                <div class="text-xs text-slate-400 font-mono">VMess · TLS · Dedicated</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 48ms
+              </span>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-white">⚡ [JP] Tokyo Ultra-Low Latency</div>
+                <div class="text-xs text-slate-400 font-mono">VLESS · gRPC · Zero Loss</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 50ms
+              </span>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-2xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-white">⚡ [UK] London Core Shield</div>
+                <div class="text-xs text-slate-400 font-mono">Trojan · XTLS · Direct</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 52ms
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Node Count Summary -->
+        <div class="p-4 rounded-2xl glass text-center flex flex-wrap items-center justify-around gap-4 text-xs font-mono">
+          <div><span class="text-slate-400">Total Probed Nodes:</span> <span class="text-white font-bold">1,751</span></div>
+          <div><span class="text-slate-400">Live Responding:</span> <span class="text-emerald-400 font-bold">1,207 (68.9%)</span></div>
+          <div><span class="text-slate-400">Active High-Priority Pool:</span> <span class="text-cyan-400 font-bold">200 Nodes</span></div>
+          <div><span class="text-slate-400">Packet Loss Rate:</span> <span class="text-emerald-400 font-bold">0.00%</span></div>
+          <div><span class="text-slate-400">Failover Latency:</span> <span class="text-indigo-400 font-bold">&lt; 50ms</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Authenticode Certificate & Security Transparency Section -->
+    <section id="security" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">Cryptographic Transparency</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Built-in Authenticode Certification</h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+            HidingJackson is digitally signed with an Authenticode 10-Year Extended Trust certificate issued directly to developer 
+            <strong class="text-white">Sai Vardhan Reddy</strong> and <strong class="text-white">BSVR Technologies</strong>.
+            Every binary and setup installer embeds this cryptographic proof to guarantee authenticity and prevent tampering.
+          </p>
+
+          <!-- Certificate Attributes List -->
+          <div class="space-y-3 font-mono text-xs">
+            <div class="p-3 rounded-xl glass border border-white/5 flex items-center justify-between">
+              <span class="text-slate-400">Publisher / Issued To:</span>
+              <span class="text-cyan-300 font-bold">Sai Vardhan Reddy (HidingJackson Developer)</span>
+            </div>
+            <div class="p-3 rounded-xl glass border border-white/5 flex items-center justify-between">
+              <span class="text-slate-400">Organization:</span>
+              <span class="text-indigo-300 font-bold">BSVR Technologies</span>
+            </div>
+            <div class="p-3 rounded-xl glass border border-white/5 flex items-center justify-between">
+              <span class="text-slate-400">Validity Horizon:</span>
+              <span class="text-emerald-300 font-bold">13/11/2026 to 13/11/2036 (10 Years)</span>
+            </div>
+            <div class="p-3 rounded-xl glass border border-white/5 flex items-center justify-between">
+              <span class="text-slate-400">Algorithm:</span>
+              <span class="text-purple-300 font-bold">SHA-256 with RSA 2048-bit Key</span>
+            </div>
+            <div class="p-3 rounded-xl glass border border-white/5 flex flex-col gap-1 text-left">
+              <span class="text-slate-400">Certificate Thumbprint:</span>
+              <span class="text-amber-300 break-all text-[11px]">2A151CF768A737A351DC949EC545DFA5AAB6A6DF</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Verification Box -->
+        <div class="glass p-6 sm:p-8 rounded-3xl border border-cyan-500/20 relative">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <i data-lucide="terminal" class="w-5 h-5 text-cyan-400"></i>
+              <span class="text-sm font-bold text-white font-mono">Verify Signature in PowerShell</span>
+            </div>
+            <button onclick="copyVerifyCmd()" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-mono text-cyan-400 flex items-center gap-1.5 transition-colors">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span id="copy-text">Copy Command</span>
+            </button>
+          </div>
+
+          <!-- Code Box -->
+          <pre class="bg-surface-950 p-4 rounded-xl text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed border border-white/5">
+<span class="text-slate-500"># Verify Authenticode digital signature on HidingJackson</span>
+Get-AuthenticodeSignature "C:\Program Files\HidingJackson\HidingJackson.exe" | Format-List
+
+<span class="text-slate-500"># Expected Output:</span>
+<span class="text-cyan-300">SignerCertificate : [Subject] CN=Sai Vardhan Reddy (HidingJackson Developer), O=BSVR Technologies</span>
+<span class="text-emerald-400">Status            : Valid</span>
+<span class="text-slate-300">StatusMessage     : Signature verified.</span></pre>
+
+          <div class="mt-6 p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/20 flex items-start gap-3 text-xs text-slate-300">
+            <i data-lucide="shield-alert" class="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"></i>
+            <div>
+              <strong class="text-white">Auto-Trust Installation:</strong>
+              The official installer automatically registers the root certificate into the local Windows User Trust store, ensuring complete OS integration without security warning dialogs.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 bg-surface-900/40 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">Engineered For Performance</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Enterprise Architecture. Zero Compromise.</h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Designed from the ground up to replace fragmented legacy tools with a unified, high-speed routing client.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="glass-card p-6 rounded-3xl">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
+              <i data-lucide="radio" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Native Kernel TUN Engine</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Creates a dedicated virtual network adapter that intercepts and encrypts all system UDP/TCP traffic with zero proxy leaks and maximum throughput.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 rounded-3xl">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
+              <i data-lucide="split" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Intelligent URL Routing</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Automated latency benchmark engine tests nodes every 180 seconds and dynamically promotes the fastest active node with under 50ms transition times.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 rounded-3xl">
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6">
+              <i data-lucide="server" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Self-Hosted Ecosystem</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              No reliance on third-party servers. Deploy your own profile feeds, documentation, and releases directly on any VPS, Docker container, or cloud host.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quickstart & Self-Hosting Guide -->
+    <section id="quickstart" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">Deployment & Usage</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Run Anywhere. Host in Seconds.</h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Install the certified desktop app or self-host this documentation portal with Docker.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Desktop Quickstart -->
+        <div class="glass p-6 sm:p-8 rounded-3xl border border-white/5">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold">1</div>
+            <h3 class="text-lg font-bold text-white">Desktop Application Installation</h3>
+          </div>
+          <ol class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-surface-900 border border-white/10 flex items-center justify-center text-xs font-mono font-bold text-cyan-400 flex-shrink-0 mt-0.5">A</span>
+              <div>
+                <strong class="text-white">Download the Installer:</strong>
+                Get <code class="text-cyan-300 bg-black/40 px-1.5 py-0.5 rounded font-mono">HidingJackson-v1.1.0-Setup.exe</code> from the releases portal.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-surface-900 border border-white/10 flex items-center justify-center text-xs font-mono font-bold text-cyan-400 flex-shrink-0 mt-0.5">B</span>
+              <div>
+                <strong class="text-white">Run Setup:</strong>
+                Follow the certified Inno Setup wizard. The certificate is automatically installed into your Trusted Publisher store.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-surface-900 border border-white/10 flex items-center justify-center text-xs font-mono font-bold text-cyan-400 flex-shrink-0 mt-0.5">C</span>
+              <div>
+                <strong class="text-white">Launch & Enjoy:</strong>
+                Open HidingJackson from your Desktop or Start Menu. Select <em>⚡ Auto - Lowest Latency</em> for instant zero-error routing.
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Docker Self-Hosting -->
+        <div class="glass p-6 sm:p-8 rounded-3xl border border-white/5">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold">2</div>
+            <h3 class="text-lg font-bold text-white">Self-Host Portal with Docker</h3>
+          </div>
+          <p class="text-xs text-slate-400 mb-4">Run this entire website on your own server or domain (<code class="text-indigo-300 font-mono">www.bsvr.work</code>) with a single command:</p>
+          <pre class="bg-surface-950 p-4 rounded-xl text-xs font-mono text-indigo-300 overflow-x-auto leading-relaxed border border-white/5">
+<span class="text-slate-500"># Clone the official repository</span>
+git clone https://github.com/SVR1339/HidingJackson.git
+cd HidingJackson/website
+
+<span class="text-slate-500"># Launch ultra-light Nginx container (port 80)</span>
+docker compose up -d
+
+<span class="text-emerald-400"># Portal live at http://localhost or your public domain!</span></pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Download Callout Section -->
+    <section id="download" class="py-20 relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass p-8 sm:p-12 rounded-3xl border border-cyan-500/30 text-center relative overflow-hidden glow-cyan">
+          <div class="absolute -top-24 -left-24 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <h2 class="text-3xl sm:text-5xl font-black text-white mb-4">Ready for Total Stealth & Performance?</h2>
+          <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+            Upgrade to HidingJackson v1.1.0 today. Authenticode verified, 100% zero-error proxy nodes, and maximum bandwidth.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://github.com/SVR1339/HidingJackson/releases/download/v1.1.0/HidingJackson-v1.1.0-Setup.exe" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-surface-950 font-bold text-base shadow-xl hover:bg-slate-100 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+              <i data-lucide="download" class="w-5 h-5 text-cyan-600"></i>
+              <span>Download Official Windows Setup (v1.1.0)</span>
+            </a>
+            <a href="https://www.bsvr.work/" target="_blank" rel="noopener" class="w-full sm:w-auto px-7 py-4 rounded-xl glass hover:border-white/30 text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
+              <i data-lucide="globe" class="w-5 h-5 text-cyan-400"></i>
+              <span>Visit BSVR Technologies</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="glass border-t border-white/5 py-12 relative z-10 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+          <i data-lucide="shield" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <div class="font-bold text-white text-sm">HidingJackson</div>
+          <div class="text-[11px]">Architected by Sai Vardhan Reddy · BSVR Technologies</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/SVR1339/HidingJackson" target="_blank" rel="noopener" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.bsvr.work/" target="_blank" rel="noopener" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="globe" class="w-4 h-4"></i>
+          <span>bsvr.work</span>
+        </a>
+        <a href="https://github.com/SVR1339/HidingJackson/blob/main/LICENSE" target="_blank" rel="noopener" class="hover:text-white transition-colors">License (GPL-3.0)</a>
+        <a href="https://github.com/SVR1339/HidingJackson/releases" target="_blank" rel="noopener" class="hover:text-white transition-colors">Releases</a>
+      </div>
+
+      <div class="text-slate-500 text-[11px]">
+        &copy; 2026 Sai Vardhan Reddy · BSVR Technologies. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Background Particle Animation Script & Helpers -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Copy command helper
+    function copyVerifyCmd() {
+      const cmd = `Get-AuthenticodeSignature "C:\\Program Files\\HidingJackson\\HidingJackson.exe" | Format-List`;
+      navigator.clipboard.writeText(cmd).then(() => {
+        const txt = document.getElementById('copy-text');
+        txt.innerText = 'Copied to Clipboard!';
+        setTimeout(() => { txt.innerText = 'Copy Command'; }, 2000);
+      });
+    }
+
+    // Particle Background Canvas
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = [];
+    const count = 45;
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 1.5 + 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = '#06b6d4';
+      ctx.strokeStyle = 'rgba(6, 182, 212, 0.12)';
+
+      for (let i = 0; i < count; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        for (let j = i + 1; j < count; j++) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>

@@ -83,7 +83,7 @@ const ProfilePage = () => {
   const { t } = useTranslation()
   const location = useLocation()
   const [url, setUrl] = useState(
-    'https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/clash.yaml',
+    'https://raw.githubusercontent.com/SVR1339/HidingJackson/main/profiles/hidingjackson-global.yaml',
   )
   const [disabled, setDisabled] = useState(false)
   const [profileDndRevision, setProfileDndRevision] = useState(0)

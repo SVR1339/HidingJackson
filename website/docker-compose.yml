@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  hidingjackson-portal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hidingjackson-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - VIRTUAL_HOST=www.bsvr.work,bsvr.work
+      - LETSENCRYPT_HOST=www.bsvr.work,bsvr.work
+    labels:
+      - "com.bsvr.description=HidingJackson Official Web Portal"
+      - "com.bsvr.developer=Sai Vardhan Reddy"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

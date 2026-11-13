@@ -2,7 +2,7 @@
   "page": {
     "actions": {
       "manual": "Manual",
-      "telegram": "Telegram Channel",
+      "telegram": "BSVR Technologies",
       "github": "Github Repo"
     },
     "actionsGroupLabel": "Settings links",
@@ -157,7 +157,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Verge Basic Setting",
+        "title": "HidingJackson Basic Setting",
         "actions": {
           "browse": "Browse"
         },
@@ -180,7 +180,7 @@
         }
       },
       "advanced": {
-        "title": "Verge Advanced Setting",
+        "title": "HidingJackson Advanced Setting",
         "tooltips": {
           "backupInfo": "Support local or WebDAV backup of configuration files",
           "openConfDir": "If the software runs abnormally, BACKUP and delete all files in this folder then restart the software",
@@ -204,7 +204,7 @@
           "liteModeSettings": "LightWeight Mode Settings",
           "exit": "Exit",
           "exportDiagnostics": "Export Diagnostic Info",
-          "vergeVersion": "Verge Version"
+          "vergeVersion": "HidingJackson Version"
         }
       },
       "theme": {

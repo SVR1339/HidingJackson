@@ -1,4 +1,4 @@
-import { GitHub, HelpOutlineRounded, Telegram } from '@mui/icons-material'
+import { GitHub, HelpOutlineRounded, Language } from '@mui/icons-material'
 import { Box, ButtonGroup, IconButton, Grid } from '@mui/material'
 import { useLockFn } from 'ahooks'
 import { useTranslation } from 'react-i18next'
@@ -25,14 +25,16 @@ const SettingPage = () => {
     ),
   )
 
-  const toGithubDoc = useLockFn(() =>
-    openExternalUrl('https://hidingjackson.github.io/index.html').catch(
+  const toOfficialWebsite = useLockFn(() =>
+    openExternalUrl('https://www.bsvr.work/').catch(
       onError,
     ),
   )
 
-  const toTelegramChannel = useLockFn(() =>
-    openExternalUrl('https://t.me/clash_verge_re').catch(onError),
+  const toDocumentation = useLockFn(() =>
+    openExternalUrl('https://www.bsvr.work/hidingjackson').catch(
+      onError,
+    ),
   )
 
   const mode = useThemeMode()
@@ -50,17 +52,17 @@ const SettingPage = () => {
             size="medium"
             color="inherit"
             title={t('settings.page.actions.manual')}
-            onClick={toGithubDoc}
+            onClick={toDocumentation}
           >
             <HelpOutlineRounded fontSize="inherit" />
           </IconButton>
           <IconButton
             size="medium"
             color="inherit"
-            title={t('settings.page.actions.telegram')}
-            onClick={toTelegramChannel}
+            title="BSVR Technologies (Official Website)"
+            onClick={toOfficialWebsite}
           >
-            <Telegram fontSize="inherit" />
+            <Language fontSize="inherit" />
           </IconButton>
 
           <IconButton
